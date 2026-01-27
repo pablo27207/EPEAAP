@@ -1,0 +1,4652 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-01-24",
+    "yearRange": [
+      2000,
+      2024
+    ],
+    "months": [
+      "ene",
+      "feb",
+      "mar",
+      "abr",
+      "may",
+      "jun",
+      "jul",
+      "ago",
+      "sep",
+      "oct",
+      "nov",
+      "dic"
+    ]
+  },
+  "config": {
+    "parametros": {
+      "param-temperatura": {
+        "key": "Temp",
+        "nombre": "Temperatura",
+        "nombre_en": "Temperature",
+        "descripcion": "Temperatura del agua medida con sensores CTD",
+        "descripcion_en": "Water temperature measured with CTD sensors",
+        "color": "#a50034",
+        "familia": "fisicas"
+      },
+      "param-salinidad": {
+        "key": "Sal",
+        "nombre": "Salinidad",
+        "nombre_en": "Salinity",
+        "descripcion": "Concentración de sales disueltas en el agua",
+        "descripcion_en": "Concentration of dissolved salts in water",
+        "color": "#023e8a",
+        "familia": "fisicas"
+      },
+      "param-nutrientes": {
+        "key": "NTS",
+        "nombre": "Nutrientes",
+        "nombre_en": "Nutrients",
+        "descripcion": "Nitratos, nitritos, fosfatos y silicatos esenciales para la vida marina",
+        "descripcion_en": "Nitrates, nitrites, phosphates, and silicates essential for marine life",
+        "color": "#e6d9ac",
+        "familia": "biogeoquimicas"
+      },
+      "param-oxigeno": {
+        "key": "OD",
+        "nombre": "Oxígeno Disuelto",
+        "nombre_en": "Dissolved Oxygen",
+        "descripcion": "Cantidad de oxígeno disponible para los organismos marinos",
+        "descripcion_en": "Amount of oxygen available for marine organisms",
+        "color": "#7B1E2B",
+        "familia": "biogeoquimicas"
+      },
+      "param-carbonatos": {
+        "key": "AT",
+        "nombre": "Sistema de Carbonatos",
+        "nombre_en": "Carbonate System",
+        "descripcion": "pH y alcalinidad, indicadores del sistema de CO₂",
+        "descripcion_en": "pH and alkalinity, indicators of the CO₂ system",
+        "color": "#3c6496",
+        "familia": "biogeoquimicas"
+      },
+      "param-clorofila": {
+        "key": "Cla",
+        "nombre": "Clorofila-a",
+        "nombre_en": "Chlorophyll-a",
+        "descripcion": "Pigmento verde de las algas, indica cantidad de fitoplancton",
+        "descripcion_en": "Green pigment in algae, indicates phytoplankton abundance",
+        "color": "#D57200",
+        "familia": "bioopticas"
+      },
+      "param-absorcion-particulado": {
+        "key": "ABSO",
+        "nombre": "Absorción Particulado",
+        "nombre_en": "Particulate Absorption",
+        "descripcion": "Cómo el agua absorbe la luz, relacionado con partículas suspendidas",
+        "descripcion_en": "How water absorbs light, related to suspended particles",
+        "color": "#A03A2E",
+        "familia": "bioopticas"
+      },
+      "param-CDOM": {
+        "key": "CDOM",
+        "nombre": "CDOM",
+        "nombre_en": "CDOM",
+        "descripcion": "Materia orgánica disuelta coloreada que da color al agua",
+        "descripcion_en": "Colored Dissolved Organic Matter that tints the water",
+        "color": "#F2A900",
+        "familia": "bioopticas"
+      },
+      "param-bacterioplankton": {
+        "key": "BACT",
+        "nombre": "Bacterioplancton",
+        "nombre_en": "Bacterioplankton",
+        "descripcion": "Microorganismos que reciclan nutrientes en el océano",
+        "descripcion_en": "Microorganisms that recycle nutrients in the ocean",
+        "color": "#1a2f46",
+        "familia": "biologicas"
+      },
+      "param-fitoplancton": {
+        "key": "FITO",
+        "nombre": "Fitoplancton",
+        "nombre_en": "Phytoplankton",
+        "descripcion": "Algas microscópicas base de la cadena alimentaria",
+        "descripcion_en": "Microscopic algae, the base of the food web",
+        "color": "#6DD3C9",
+        "familia": "biologicas"
+      },
+      "param-zooplankton": {
+        "key": "ZOO",
+        "nombre": "Zooplancton",
+        "nombre_en": "Zooplankton",
+        "descripcion": "Pequeños animales que se alimentan del fitoplancton",
+        "descripcion_en": "Small animals that feed on phytoplankton",
+        "color": "#009688",
+        "familia": "biologicas"
+      },
+      "param-ictioplankton": {
+        "key": "ICTIO",
+        "nombre": "Ictioplancton",
+        "nombre_en": "Ichthyoplankton",
+        "descripcion": "Huevos y larvas de peces",
+        "descripcion_en": "Fish eggs and larvae",
+        "color": "#007B7F",
+        "familia": "biologicas"
+      },
+      "parametro-pp": {
+        "key": "PP",
+        "nombre": "Producción Primaria",
+        "nombre_en": "Primary Production",
+        "descripcion": "Cantidad de carbono fijado por fotosíntesis del fitoplancton",
+        "descripcion_en": "Amount of carbon fixed by phytoplankton photosynthesis",
+        "color": "#000000",
+        "familia": "produccion"
+      }
+    },
+    "familias": {
+      "fisicas": {
+        "nombre": "Propiedades Físicas",
+        "nombre_en": "Physical Properties",
+        "descripcion": "Variables físicas del agua",
+        "descripcion_en": "Physical water properties"
+      },
+      "biogeoquimicas": {
+        "nombre": "Propiedades Biogeoquímicas",
+        "nombre_en": "Biogeochemical Properties",
+        "descripcion": "Ciclos de nutrientes y gases disueltos",
+        "descripcion_en": "Nutrient cycles and dissolved gases"
+      },
+      "bioopticas": {
+        "nombre": "Propiedades Bio-ópticas",
+        "nombre_en": "Bio-optical Properties",
+        "descripcion": "Propiedades ópticas del agua relacionadas con la biología",
+        "descripcion_en": "Optical water properties related to biology"
+      },
+      "biologicas": {
+        "nombre": "Propiedades Biológicas",
+        "nombre_en": "Biological Properties",
+        "descripcion": "Comunidades planctónicas",
+        "descripcion_en": "Planktonic communities"
+      },
+      "produccion": {
+        "nombre": "Producción Primaria",
+        "nombre_en": "Primary Production",
+        "descripcion": "Fijación de carbono por fotosíntesis",
+        "descripcion_en": "Carbon fixation via photosynthesis"
+      }
+    },
+    "barcos": {
+      "AD": {
+        "nombre": "Aldebarán",
+        "descripcion": "Buque de investigación de DINARA (Uruguay). 36.7m de eslora. Realiza evaluación de recursos pesqueros y oceanografía.",
+        "descripcion_en": "DINARA (Uruguay) research vessel. 36.7m length. Conducts fisheries resource assessment and oceanography.",
+        "color": "#FF9B85"
+      },
+      "AH": {
+        "nombre": "Bernardo Houssay",
+        "descripcion": "Motovelero oceanográfico de Prefectura Naval. Ex 'Atlantis' (1930), modernizado para ciencia. 43.5m de eslora.",
+        "descripcion_en": "Oceanographic motorsailer of the Naval Prefecture. Ex 'Atlantis' (1930), modernized for science. 43.5m length.",
+        "color": "#FFBA08"
+      },
+      "CC": {
+        "nombre": "Capitán Cánepa",
+        "descripcion": "Buque histórico del INIDEP (1964-2019). Ex pesquero adaptado. 39m de eslora. Realizó más de 200 campañas.",
+        "descripcion_en": "Historic INIDEP vessel (1964-2019). Adapted former fishing vessel. 39m length. Conducted over 200 campaigns.",
+        "color": "#d00000"
+      },
+      "CR": {
+        "nombre": "Comodoro Rivadavia",
+        "descripcion": "Buque hidrográfico de la Armada (1974-2024). 52m de eslora. Relevamientos batimétricos y oceanográficos.",
+        "descripcion_en": "Navy hydrographic vessel (1974-2024). 52m length. Bathymetric and oceanographic surveys.",
+        "color": "#8FE388"
+      },
+      "EH": {
+        "nombre": "Eduardo Holmberg",
+        "descripcion": "Buque del INIDEP construido en Japón (1980). 61m de eslora. Especializado en investigación pesquera y ambiental.",
+        "descripcion_en": "INIDEP vessel built in Japan (1980). 61m length. Specialized in fisheries and environmental research.",
+        "color": "#1B998B"
+      },
+      "MA": {
+        "nombre": "Mar Argentino",
+        "descripcion": "Buque costero del INIDEP (2020). 36m de eslora. Silencioso y moderno, para evaluación de recursos costeros.",
+        "descripcion_en": "INIDEP coastal vessel (2020). 36m length. Silent and modern, for coastal resource assessment.",
+        "color": "#3185FC"
+      },
+      "OB": {
+        "nombre": "Oca Balda",
+        "descripcion": "Buque del INIDEP (ahora APN), construido en Alemania (1983). 65m de eslora. Investigación en áreas marinas protegidas.",
+        "descripcion_en": "INIDEP vessel (now APN), built in Germany (1983). 65m length. Research in marine protected areas.",
+        "color": "#5D2E8C"
+      },
+      "PD": {
+        "nombre": "Puerto Deseado",
+        "descripcion": "Buque oceanográfico de Armada/CONICET (1978). 76m de eslora. Casco reforzado para operar en aguas antárticas.",
+        "descripcion_en": "Navy/CONICET oceanographic vessel (1978). 76m length. Reinforced hull for Antarctic operations.",
+        "color": "#CBFF8C"
+      },
+      "VA": {
+        "nombre": "Victor Angelescu",
+        "descripcion": "Buque de última generación del INIDEP (2017). 52.8m de eslora. Equipado para oceanografía y pesca en todo el Mar Argentino.",
+        "descripcion_en": "State-of-the-art INIDEP vessel (2017). 52.8m length. Equipped for oceanography and fisheries throughout the Argentine Sea.",
+        "color": "#FF7B9C"
+      }
+    }
+  },
+  "campañas": [
+    {
+      "year": 2000,
+      "month": "ene",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2000,
+      "month": "feb",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "FITO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2000,
+      "month": "mar",
+      "nro_visitas": "multiple",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2000,
+      "month": "abr",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2000,
+      "month": "may",
+      "nro_visitas": "multiple",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2000,
+      "month": "jun",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2000,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2000,
+      "month": "ago",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2000,
+      "month": "sep",
+      "nro_visitas": "multiple",
+      "tipo": "Propia",
+      "barcos": [
+        "OB",
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2000,
+      "month": "oct",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2000,
+      "month": "nov",
+      "nro_visitas": "multiple",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2000,
+      "month": "dic",
+      "nro_visitas": "multiple",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2001,
+      "month": "ene",
+      "nro_visitas": "multiple",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2001,
+      "month": "feb",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2001,
+      "month": "mar",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2001,
+      "month": "abr",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2001,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2001,
+      "month": "jun",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "EH"
+      ],
+      "variables": [
+        "Temp",
+        "Cla",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2001,
+      "month": "jul",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2001,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2001,
+      "month": "sep",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2001,
+      "month": "oct",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal"
+      ]
+    },
+    {
+      "year": 2001,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2001,
+      "month": "dic",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2002,
+      "month": "ene",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2002,
+      "month": "feb",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2002,
+      "month": "mar",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2002,
+      "month": "abr",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2002,
+      "month": "may",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2002,
+      "month": "jun",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2002,
+      "month": "jul",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2002,
+      "month": "ago",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2002,
+      "month": "sep",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2002,
+      "month": "oct",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2002,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2002,
+      "month": "dic",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2003,
+      "month": "ene",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2003,
+      "month": "feb",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2003,
+      "month": "mar",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2003,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2003,
+      "month": "may",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2003,
+      "month": "jun",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2003,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2003,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2003,
+      "month": "sep",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2003,
+      "month": "oct",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2003,
+      "month": "nov",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2003,
+      "month": "dic",
+      "nro_visitas": "multiple",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2004,
+      "month": "ene",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2004,
+      "month": "feb",
+      "nro_visitas": "multiple",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2004,
+      "month": "mar",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2004,
+      "month": "abr",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2004,
+      "month": "may",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2004,
+      "month": "jun",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2004,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2004,
+      "month": "ago",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2004,
+      "month": "sep",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2004,
+      "month": "oct",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2004,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2004,
+      "month": "dic",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2005,
+      "month": "ene",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2005,
+      "month": "feb",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2005,
+      "month": "mar",
+      "nro_visitas": "multiple",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2005,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2005,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2005,
+      "month": "jun",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2005,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2005,
+      "month": "ago",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2005,
+      "month": "sep",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2005,
+      "month": "oct",
+      "nro_visitas": "multiple",
+      "tipo": "Propia_Oportunista",
+      "barcos": [
+        "PD",
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2005,
+      "month": "nov",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2005,
+      "month": "dic",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2006,
+      "month": "ene",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2006,
+      "month": "feb",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2006,
+      "month": "mar",
+      "nro_visitas": "multiple",
+      "tipo": "Propia_Oportunista",
+      "barcos": [
+        "PD",
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2006,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2006,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2006,
+      "month": "jun",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2006,
+      "month": "jul",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2006,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2006,
+      "month": "sep",
+      "nro_visitas": "multiple",
+      "tipo": "Propia_Oportunista",
+      "barcos": [
+        "CC",
+        "PD"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2006,
+      "month": "oct",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2006,
+      "month": "nov",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2006,
+      "month": "dic",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "EH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2007,
+      "month": "ene",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2007,
+      "month": "feb",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2007,
+      "month": "mar",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2007,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2007,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2007,
+      "month": "jun",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2007,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2007,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2007,
+      "month": "sep",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2007,
+      "month": "oct",
+      "nro_visitas": "multiple",
+      "tipo": "Propia_Oportunista",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2007,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2007,
+      "month": "dic",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2008,
+      "month": "ene",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2008,
+      "month": "feb",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2008,
+      "month": "mar",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2008,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2008,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2008,
+      "month": "jun",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2008,
+      "month": "jul",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2008,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2008,
+      "month": "sep",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2008,
+      "month": "oct",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2008,
+      "month": "nov",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "Cla",
+        "ABSO",
+        "PP",
+        "FITO"
+      ]
+    },
+    {
+      "year": 2008,
+      "month": "dic",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2009,
+      "month": "ene",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "Cla",
+        "ABSO",
+        "PP",
+        "FITO"
+      ]
+    },
+    {
+      "year": 2009,
+      "month": "feb",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2009,
+      "month": "mar",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2009,
+      "month": "abr",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2009,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2009,
+      "month": "jun",
+      "nro_visitas": "multiple",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2009,
+      "month": "jul",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2009,
+      "month": "ago",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2009,
+      "month": "sep",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2009,
+      "month": "oct",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2009,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2009,
+      "month": "dic",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2010,
+      "month": "ene",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "PP",
+        "FITO"
+      ]
+    },
+    {
+      "year": 2010,
+      "month": "feb",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2010,
+      "month": "mar",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2010,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2010,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2010,
+      "month": "jun",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2010,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "PD"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2010,
+      "month": "ago",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2010,
+      "month": "sep",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2010,
+      "month": "oct",
+      "nro_visitas": "multiple",
+      "tipo": "Propia_Oportunista",
+      "barcos": [
+        "PD",
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2010,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2010,
+      "month": "dic",
+      "nro_visitas": "multiple",
+      "tipo": "Propia_Oportunista",
+      "barcos": [
+        "PD",
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2011,
+      "month": "ene",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CC"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2011,
+      "month": "feb",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2011,
+      "month": "mar",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2011,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2011,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2011,
+      "month": "jun",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2011,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "PD"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "Cla",
+        "ABSO",
+        "PP",
+        "FITO"
+      ]
+    },
+    {
+      "year": 2011,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2011,
+      "month": "sep",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2011,
+      "month": "oct",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "AD"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "ABSO"
+      ]
+    },
+    {
+      "year": 2011,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2011,
+      "month": "dic",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2012,
+      "month": "ene",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2012,
+      "month": "feb",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2012,
+      "month": "mar",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2012,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2012,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2012,
+      "month": "jun",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2012,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "PD"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "PP",
+        "FITO"
+      ]
+    },
+    {
+      "year": 2012,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2012,
+      "month": "sep",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2012,
+      "month": "oct",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2012,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2012,
+      "month": "dic",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2013,
+      "month": "ene",
+      "nro_visitas": "multiple",
+      "tipo": "Oportunista",
+      "barcos": [
+        "EH",
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2013,
+      "month": "feb",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2013,
+      "month": "mar",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2013,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2013,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2013,
+      "month": "jun",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2013,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2013,
+      "month": "ago",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "CR"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2013,
+      "month": "sep",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2013,
+      "month": "oct",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2013,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2013,
+      "month": "dic",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "EH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2014,
+      "month": "ene",
+      "nro_visitas": "multiple",
+      "tipo": "Oportunista",
+      "barcos": [
+        "EH",
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "PP",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2014,
+      "month": "feb",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2014,
+      "month": "mar",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "OB"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2014,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2014,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2014,
+      "month": "jun",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2014,
+      "month": "jul",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2014,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2014,
+      "month": "sep",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2014,
+      "month": "oct",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2014,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2014,
+      "month": "dic",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2015,
+      "month": "ene",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2015,
+      "month": "feb",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2015,
+      "month": "mar",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2015,
+      "month": "abr",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2015,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2015,
+      "month": "jun",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2015,
+      "month": "jul",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2015,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2015,
+      "month": "sep",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2015,
+      "month": "oct",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2015,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2015,
+      "month": "dic",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2016,
+      "month": "ene",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2016,
+      "month": "feb",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2016,
+      "month": "mar",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2016,
+      "month": "abr",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2016,
+      "month": "may",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "PD"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "BACT",
+        "FITO"
+      ]
+    },
+    {
+      "year": 2016,
+      "month": "jun",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2016,
+      "month": "jul",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2016,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2016,
+      "month": "sep",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2016,
+      "month": "oct",
+      "nro_visitas": "multiple",
+      "tipo": "Propia_Oportunista",
+      "barcos": [
+        "EH",
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2016,
+      "month": "nov",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "PD"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "PP",
+        "BACT",
+        "FITO"
+      ]
+    },
+    {
+      "year": 2016,
+      "month": "dic",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2017,
+      "month": "ene",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2017,
+      "month": "feb",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "EH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2017,
+      "month": "mar",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2017,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2017,
+      "month": "may",
+      "nro_visitas": "multiple",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2017,
+      "month": "jun",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "PD"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "PP",
+        "BACT",
+        "FITO"
+      ]
+    },
+    {
+      "year": 2017,
+      "month": "jul",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2017,
+      "month": "ago",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2017,
+      "month": "sep",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2017,
+      "month": "oct",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2017,
+      "month": "nov",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2017,
+      "month": "dic",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2018,
+      "month": "ene",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "EH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "feb",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "EH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "mar",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2018,
+      "month": "abr",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "may",
+      "nro_visitas": "multiple",
+      "tipo": "Propia_Oportunista",
+      "barcos": [
+        "VA",
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "jun",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "ago",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "FITO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "sep",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "oct",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2018,
+      "month": "dic",
+      "nro_visitas": "multiple",
+      "tipo": "Propia_Oportunista",
+      "barcos": [
+        "AH",
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2019,
+      "month": "ene",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2019,
+      "month": "feb",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2019,
+      "month": "mar",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2019,
+      "month": "abr",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2019,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2019,
+      "month": "jun",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2019,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2019,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2019,
+      "month": "sep",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2019,
+      "month": "oct",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2019,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2019,
+      "month": "dic",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2020,
+      "month": "ene",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2020,
+      "month": "feb",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2020,
+      "month": "mar",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2020,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2020,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2020,
+      "month": "jun",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2020,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO"
+      ]
+    },
+    {
+      "year": 2020,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2020,
+      "month": "sep",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2020,
+      "month": "oct",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2020,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2020,
+      "month": "dic",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "EH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "ene",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "feb",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "EH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "Cla",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "mar",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2021,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2021,
+      "month": "may",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2021,
+      "month": "jun",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "Cla",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2021,
+      "month": "sep",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2021,
+      "month": "oct",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "nov",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "EH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "dic",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "ene",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2022,
+      "month": "feb",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2022,
+      "month": "mar",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2022,
+      "month": "may",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "jun",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "jul",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2022,
+      "month": "ago",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "sep",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "EH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "oct",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2022,
+      "month": "dic",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "ene",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2023,
+      "month": "feb",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2023,
+      "month": "mar",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "abr",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2023,
+      "month": "may",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "jun",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2023,
+      "month": "sep",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2023,
+      "month": "oct",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2023,
+      "month": "nov",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "dic",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2024,
+      "month": "ene",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "feb",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "AH"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "mar",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2024,
+      "month": "abr",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "may",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "jun",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2024,
+      "month": "jul",
+      "nro_visitas": "multiple",
+      "tipo": "Propia_Oportunista",
+      "barcos": [
+        "VA",
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "ago",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2024,
+      "month": "sep",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "oct",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "VA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "BACT",
+        "FITO"
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "nov",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "FITO"
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "dic",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        "MA"
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    }
+  ]
+}

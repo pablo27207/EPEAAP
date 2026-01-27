@@ -1,0 +1,11 @@
+services:
+  epea-dev:
+    build: .
+    container_name: epea-dev
+    ports:
+      - "8080:80"
+    volumes:
+      # Montar el directorio actual para ver cambios en vivo sin reconstruir
+      - ./:/usr/share/nginx/html
+    environment:
+      - NODE_ENV=development

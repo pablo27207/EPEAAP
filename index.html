@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPEA - Estación Permanente de Estudios Ambientales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/img/completo_organizado.svg">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="lang-switch">
+            <button class="lang-btn active" data-lang="es">ES</button>
+            <span class="lang-separator">|</span>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <h1 id="main-title">Estación Permanente de Estudios Ambientales <span class="coordinates">(EPEA, 38°28′ S -
+                57°41′ O)</span>
+        </h1>
+        <p class="subtitle" id="main-subtitle">Un recorrido por la Serie de Tiempo Ecológica Marina (STEM)</p>
+    </header>
+
+    <main>
+        <div id="grid-container" class="grid-container">
+            <!-- La grilla se genera dinámicamente -->
+        </div>
+    </main>
+
+    <footer>
+        <p>INIDEP · Instituto Nacional de Investigación y Desarrollo Pesquero</p>
+    </footer>
+
+    <!-- Modal para vista detallada -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-title">Campaña</h2>
+                <p id="modal-subtitle"></p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-labels modal-labels-left" id="modal-labels-left"></div>
+                <div class="modal-diagram" id="modal-diagram">
+                    <div class="modal-svg" id="modal-svg"></div>
+                </div>
+                <div class="modal-labels modal-labels-right" id="modal-labels-right"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./src/app.js"></script>
+</body>
+
+</html>

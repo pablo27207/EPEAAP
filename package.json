@@ -1,0 +1,11 @@
+{
+  "name": "epeaapp-v2",
+  "version": "1.0.0",
+  "description": "EPEAAPP V2 - Visualización de datos oceanográficos de EPEA",
+  "scripts": {
+    "dev": "python -m http.server 8080",
+    "start": "python app.py"
+  },
+  "author": "EPEA Team",
+  "license": "MIT"
+}

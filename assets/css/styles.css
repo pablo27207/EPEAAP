@@ -1,0 +1,840 @@
+/* EPEAAPV2 - Versión Estable con fondo blanco */
+
+:root {
+    --bg-light: #ffffff;
+    --bg-subtle: #f8f9fa;
+    --accent: #e8ecf0;
+    --text-primary: #1a1a2e;
+    --text-secondary: #6c757d;
+    --border-color: #e9ecef;
+    --cell-size: 52px;
+    --gap: 3px;
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg-light);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Header artístico */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+header h1 .coordinates {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    display: block;
+    margin-top: 4px;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+/* Language Switch */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    z-index: 20;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #999;
+    cursor: pointer;
+    padding: 2px;
+    transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+    color: #333;
+}
+
+.lang-btn.active {
+    color: #000;
+    font-weight: 700;
+}
+
+.lang-separator {
+    color: #ddd;
+    font-size: 0.8rem;
+    user-select: none;
+}
+
+@media (max-width: 600px) {
+    .lang-switch {
+        top: 15px;
+        right: 20px;
+    }
+}
+
+/* Grid Container */
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    max-width: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.grid-row {
+    display: flex;
+    gap: var(--gap);
+}
+
+.grid-row.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg-light);
+    padding-bottom: 10px;
+}
+
+/* Cells */
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.year-cell {
+    width: 55px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+}
+
+.month-header {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.data-cell {
+    background: transparent;
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 50%;
+}
+
+.data-cell.has-data:hover {
+    transform: scale(2);
+    z-index: 100;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.data-cell.no-data {
+    background: var(--bg-subtle);
+    border-radius: 50%;
+    opacity: 0.4;
+}
+
+/* SVG Circle */
+.epea-circle {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+/* Error message */
+.error {
+    color: #dc3545;
+    text-align: center;
+    padding: 40px;
+}
+
+/* Modal con diseño estilo animejs */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    position: relative;
+    background: var(--bg-light);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 1100px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-hover);
+    border: 1px solid var(--border-color);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+    line-height: 1;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+    transform: rotate(90deg);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.modal-header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Layout principal del modal - estilo animejs */
+.modal-body {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0;
+    min-height: 380px;
+    position: relative;
+}
+
+/* Contenedor del diagrama SVG */
+.modal-diagram {
+    position: relative;
+    flex: 0 0 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-svg {
+    position: relative;
+    z-index: 2;
+}
+
+.modal-svg svg {
+    width: 260px;
+    height: 260px;
+    transition: filter 0.3s ease;
+}
+
+/* SVG de líneas conectoras */
+.connector-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.connector-line {
+    fill: none;
+    stroke: #6c757d;
+    stroke-width: 1;
+    opacity: 0.5;
+    transition: stroke 0.3s, opacity 0.3s, stroke-width 0.3s;
+}
+
+.connector-line.active {
+    stroke: #1a1a2e;
+    opacity: 1;
+    stroke-width: 2;
+}
+
+.connector-line.inactive {
+    opacity: 0.15;
+    stroke-dasharray: 3 3;
+}
+
+/* Contenedores de labels */
+.modal-labels {
+    flex: 0 0 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 15px 0;
+}
+
+.modal-labels-left {
+    align-items: flex-end;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.modal-labels-right {
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 15px;
+}
+
+/* Grupos de familia */
+.family-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.family-header {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0 8px;
+    margin-bottom: 2px;
+    opacity: 0.7;
+}
+
+.family-params {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+/* Etiquetas de parámetros */
+.param-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.modal-labels-left .param-label {
+    flex-direction: row-reverse;
+}
+
+.param-label:hover {
+    background: var(--bg-subtle);
+}
+
+.param-label.highlighted {
+    background: var(--accent);
+    transform: scale(1.05);
+}
+
+/* Nivel 1: Resaltado de familia */
+.param-label.family-highlighted {
+    background: rgba(200, 200, 200, 0.2);
+}
+
+.param-label.family-highlighted .param-color {
+    transform: scale(1.1);
+}
+
+.param-label.inactive {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.param-label.inactive:hover {
+    background: transparent;
+}
+
+.param-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de pincelada */
+/* Efecto de pincelada realista */
+/* Estados de interacción del SVG */
+#modal-epea-svg {
+    transition: all 0.3s ease;
+}
+
+/* #modal-epea-svg.highlighting-active eliminado por estar vacío */
+
+/* Elementos atenuados (no seleccionados) */
+.svg-dimmed {
+    opacity: 0.15 !important;
+    filter: saturate(0.1) brightness(1.2) !important;
+    transition: all 0.3s ease;
+}
+
+/* Nivel 1: Familia (semi-resaltado) */
+.svg-family-highlight {
+    opacity: 0.5 !important;
+    filter: saturate(0.8) brightness(1.05) !important;
+    transition: all 0.3s ease;
+}
+
+/* Nivel 2: Específico (resaltado total) */
+.svg-highlighted {
+    opacity: 1 !important;
+    filter: saturate(1.3) brightness(1.1) drop-shadow(0 0 8px rgba(0, 0, 0, 0.4)) !important;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+/* Ajuste para evitar que el filtro afecte bordes de contenedores */
+g[id^="param-"],
+g[id^="parametro-"] {
+    isolation: isolate;
+}
+
+/* Wrapper para el SVG del pincel */
+.param-color-wrapper {
+    width: 24px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6px;
+    margin-top: 7px;
+}
+
+.param-color-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.param-label.highlighted .param-color-svg {
+    transform: scale(1.2);
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+}
+
+.param-label.family-highlighted .param-color-svg {
+    transform: scale(1.1);
+}
+
+.param-label.inactive .param-color-svg {
+    opacity: 0.4;
+    filter: grayscale(0.5);
+}
+
+/* Indicador PP único (puntos triangulares) */
+.pp-indicator {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    background: transparent;
+    margin-right: 4px;
+}
+
+.pp-indicator::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #000;
+    border-radius: 50%;
+    /* Triángulo de 6 puntos apuntando a la derecha:
+       Columna 1 (Izq): 3 puntos
+       Columna 2 (Medio): 2 puntos
+       Columna 3 (Der): 1 punto
+    */
+    box-shadow:
+        0 6px 0 #000,
+        0 12px 0 #000,
+        /* Columna 1 completa */
+        6px 3px 0 #000,
+        6px 9px 0 #000,
+        /* Columna 2 */
+        12px 6px 0 #000;
+    /* Columna 3 (Punta) */
+    top: 1px;
+    left: 0;
+}
+
+.param-label.highlighted .param-color {
+    transform: scale(1.3) rotate(-3deg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.param-label.inactive .param-color.brush-stroke {
+    background: var(--border-color) !important;
+    opacity: 0.5;
+}
+
+/* Contenedor de texto */
+.param-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.param-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.param-familia {
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    opacity: 0.7;
+    line-height: 1.1;
+}
+
+.param-label.inactive .param-name {
+    color: var(--text-secondary);
+}
+
+.param-label.inactive .param-familia {
+    opacity: 0.4;
+}
+
+/* Línea horizontal decorativa (oculta, usamos SVG) */
+.param-line {
+    display: none;
+}
+
+/* Sección de barcos */
+.ships-section {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.ships-section h4 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+}
+
+.ship-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 6px;
+    /* Added padding for better hover target */
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    cursor: help;
+}
+
+.ship-item:hover {
+    background-color: var(--bg-subtle);
+    /* Assuming this variable exists, matching param-label:hover */
+}
+
+.ship-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+}
+
+/* Indicador de visita dirigida (punto negro dentro) */
+.ship-color.directed::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #000;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.ship-name {
+    font-size: 0.75rem;
+    color: var(--text-primary);
+}
+
+/* Highlight de zonas SVG */
+.modal-svg svg path,
+.modal-svg svg g {
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-svg svg.dimmed path:not(.highlighted-zone),
+.modal-svg svg.dimmed g:not(.highlighted-zone) {
+    filter: saturate(0.2) brightness(1.3) !important;
+    opacity: 0.4 !important;
+}
+
+.modal-svg svg .highlighted-zone,
+.modal-svg svg path.highlighted-zone {
+    filter: saturate(1.2) brightness(1.05) drop-shadow(0 0 12px rgba(0, 0, 0, 0.4)) !important;
+    opacity: 1 !important;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .modal-labels {
+        flex: 0 0 150px;
+    }
+
+    .param-name {
+        font-size: 0.7rem;
+    }
+}
+
+/* Descripción de parámetros (hover) */
+.param-description {
+    margin-top: auto;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    min-height: 80px;
+    /* Evitar saltos de layout si fuera necesario, aunque margin-top: auto ayuda */
+    pointer-events: none;
+    /* No interferir con el mouse */
+}
+
+.param-description.visible {
+    opacity: 1;
+}
+
+@media (max-width: 900px) {
+    :root {
+        --cell-size: 40px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .modal-body {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        padding-bottom: 20px;
+        overflow-y: auto;
+    }
+
+    .modal-diagram {
+        order: 1;
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        height: auto;
+    }
+
+    .modal-svg svg {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* Side-by-side columns below the diagram */
+    .modal-labels-left {
+        order: 2;
+        flex: 0 0 50%;
+        max-width: 50%;
+        /* Strict limit */
+        min-width: 0;
+        box-sizing: border-box;
+        /* Include padding in width */
+        text-align: right;
+        padding-right: 15px;
+        padding-left: 5px;
+    }
+
+    .modal-labels-right {
+        order: 3;
+        flex: 0 0 50%;
+        max-width: 50%;
+        /* Strict limit */
+        min-width: 0;
+        box-sizing: border-box;
+        /* Include padding in width */
+        text-align: left;
+        padding-left: 15px;
+        padding-right: 5px;
+    }
+
+    /* Restore flex direction to keep symmetry */
+    .modal-labels-left .param-label {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+    }
+
+    .modal-labels-right .param-label {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .modal-labels {
+        flex: none;
+    }
+
+    /* Stack params vertically */
+    .family-params {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* Align items towards the center spine */
+    .modal-labels-left .family-params {
+        align-items: flex-end;
+    }
+
+    .modal-labels-right .family-params {
+        align-items: flex-start;
+    }
+
+    .family-group {
+        margin-bottom: 15px;
+        background: transparent;
+        padding: 0;
+    }
+
+    .family-header {
+        margin-bottom: 5px;
+        font-size: 0.65rem;
+        /* text-align will inherit from parent col (left/right) */
+    }
+
+    .param-label {
+        padding: 4px 0;
+        background: transparent;
+        box-shadow: none;
+        width: auto;
+    }
+
+    .param-name {
+        font-size: 0.75rem;
+        /* text-align will be handled by flex order */
+    }
+
+    /* Hide complex decorations */
+    .connector-lines,
+    .param-line {
+        display: none !important;
+    }
+
+    /* Show description in the bottom-left empty space */
+    .param-description {
+        display: block !important;
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        background: transparent;
+        padding-top: 20px;
+        text-align: right;
+        font-size: 0.8rem;
+        line-height: 1.3;
+        border-top: none;
+        box-shadow: none;
+        z-index: 10;
+        min-height: 60px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+        white-space: normal;
+        /* Force wrapping */
+    }
+
+    .ships-section {
+        margin-top: 15px;
+        align-items: flex-start;
+        /* Aligns to the left in right column */
+    }
+}
