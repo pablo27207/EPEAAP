@@ -188,6 +188,30 @@ footer {
     letter-spacing: 0.05em;
 }
 
+.footer-logo {
+    height: 35px;
+    width: auto;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Logo EPEA es circular y necesita más altura para verse igual */
+.footer-logo-epea {
+    height: 50px;
+}
+
 /* Error message */
 .error {
     color: #dc3545;
@@ -640,6 +664,28 @@ g[id^="parametro-"] {
 .ship-name {
     font-size: 0.75rem;
     color: var(--text-primary);
+}
+
+/* Badge de tipo de visita junto al barco */
+.ship-type-badge {
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-left: 4px;
+    opacity: 0.8;
+}
+
+/* Indicador de frecuencia de visita (única/múltiple) */
+.visit-frequency {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--bg-subtle);
+    padding: 4px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
 }
 
 /* Highlight de zonas SVG */

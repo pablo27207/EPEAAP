@@ -101,9 +101,9 @@ function updateUITexts() {
     const subtitleEl = document.getElementById('main-subtitle');
 
     if (currentLanguage === 'es') {
-        subtitleEl.textContent = `Un recorrido por los ${years} años de la Serie de Tiempo Ecológica Marina (STEM)`;
+        subtitleEl.innerHTML = `Un recorrido que brinda contexto sobre las visitas y la información recolectada durante ${years} años<br>a una de las series temporales ecológicas marinas más longevas del Atlántico Suboccidental.`;
     } else {
-        subtitleEl.textContent = `A journey through ${years} years of the Marine Ecological Time Series (METS)`;
+        subtitleEl.innerHTML = `A tour that provides context on the visits and information collected over ${years} years<br>to one of the longest-running marine ecological time series in the Subwestern Atlantic.`;
     }
 }
 

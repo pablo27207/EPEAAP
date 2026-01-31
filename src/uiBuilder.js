@@ -43,21 +43,48 @@ export function buildGroupedLabels(familyGroups, campaña, side, config, lang = 
     if (side === 'right' && campaña.barcos && campaña.barcos.length > 0) {
         const shipsTitle = t.shipsTitle || 'BUQUES DE INVESTIGACIÓN';
 
-        html += `<div class="ships-section"><h4>${shipsTitle}</h4>`;
+        // Determinar frecuencia de visita (única o múltiple)
+        const visitFrequency = t.visitFrequency || { single: 'Visita única', multiple: 'Visitas múltiples' };
+        const frequencyText = campaña.nro_visitas === 'multiple' ? visitFrequency.multiple : visitFrequency.single;
 
-        // Determinar si es visita dirigida (tiene punto)
-        const isDirected = campaña.tipo && (
-            campaña.tipo.toLowerCase().includes('propia') ||
-            campaña.tipo.toLowerCase().includes('dirigida')
-        );
+        // Labels para tipos de visita
+        const visitTypeLabels = t.visitType || { directed: 'Dirigida', opportunistic: 'Oportunista', mixed: 'Dirigida + Oportunista' };
 
-        campaña.barcos.forEach(barcoKey => {
-            const barco = barcos[barcoKey];
+        // Función para obtener etiqueta del tipo individual de cada barco
+        const getShipTypeLabel = (tipoBarco) => {
+            const tipoLower = (tipoBarco || '').toLowerCase();
+            if (tipoLower.includes('propia') || tipoLower.includes('dirigida')) {
+                return visitTypeLabels.directed;
+            } else if (tipoLower.includes('oportunista')) {
+                return visitTypeLabels.opportunistic;
+            }
+            return '';
+        };
+
+        html += `<div class="ships-section">`;
+        html += `<div class="visit-frequency">${frequencyText}</div>`;
+        html += `<h4>${shipsTitle}</h4>`;
+
+        campaña.barcos.forEach(barcoItem => {
+            // Soportar ambos formatos: nuevo (objeto con code y tipo) y antiguo (string)
+            const barcoCode = typeof barcoItem === 'object' ? barcoItem.code : barcoItem;
+            const barcoTipo = typeof barcoItem === 'object' ? barcoItem.tipo : campaña.tipo;
+
+            const barco = barcos[barcoCode];
             if (barco) {
+                // Determinar si este barco específico es dirigido
+                const isDirected = barcoTipo && (
+                    barcoTipo.toLowerCase().includes('propia') ||
+                    barcoTipo.toLowerCase().includes('dirigida')
+                );
+
+                const shipTypeLabel = getShipTypeLabel(barcoTipo);
+
                 html += `
-                    <div class="ship-item" data-ship-id="${barcoKey}">
+                    <div class="ship-item" data-ship-id="${barcoCode}">
                         <span class="ship-color ${isDirected ? 'directed' : ''}" style="background: ${barco.color}"></span>
                         <span class="ship-name">${barco.nombre}</span>
+                        <span class="ship-type-badge">${shipTypeLabel}</span>
                     </div>
                 `;
             }

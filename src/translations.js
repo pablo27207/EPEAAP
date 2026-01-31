@@ -8,6 +8,15 @@ export const translations = {
             year: 'Año',
             campaigns: 'Campaña(s)',
             type: 'Tipo'
+        },
+        visitType: {
+            directed: 'Dirigida',
+            opportunistic: 'Oportunista',
+            mixed: 'Dirigida + Oportunista'
+        },
+        visitFrequency: {
+            single: 'Visita única',
+            multiple: 'Visitas múltiples'
         }
     },
     en: {
@@ -19,6 +28,15 @@ export const translations = {
             year: 'Year',
             campaigns: 'Campaign(s)',
             type: 'Type'
+        },
+        visitType: {
+            directed: 'Directed',
+            opportunistic: 'Opportunistic',
+            mixed: 'Directed + Opportunistic'
+        },
+        visitFrequency: {
+            single: 'Single visit',
+            multiple: 'Multiple visits'
         }
     }
 };

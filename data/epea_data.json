@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "lastUpdated": "2026-01-24",
+    "lastUpdated": "2026-01-31",
     "yearRange": [
       2000,
-      2024
+      2025
     ],
     "months": [
       "ene",
@@ -26,8 +26,8 @@
         "key": "Temp",
         "nombre": "Temperatura",
         "nombre_en": "Temperature",
-        "descripcion": "Temperatura del agua medida con sensores CTD",
-        "descripcion_en": "Water temperature measured with CTD sensors",
+        "descripcion": "Temperatura del agua de mar.",
+        "descripcion_en": "Seawater temperature.",
         "color": "#a50034",
         "familia": "fisicas"
       },
@@ -35,8 +35,8 @@
         "key": "Sal",
         "nombre": "Salinidad",
         "nombre_en": "Salinity",
-        "descripcion": "Concentración de sales disueltas en el agua",
-        "descripcion_en": "Concentration of dissolved salts in water",
+        "descripcion": "Contenidos de sales disueltas en agua de mar.",
+        "descripcion_en": "Concentration of dissolved salts in seawater",
         "color": "#023e8a",
         "familia": "fisicas"
       },
@@ -44,8 +44,8 @@
         "key": "NTS",
         "nombre": "Nutrientes",
         "nombre_en": "Nutrients",
-        "descripcion": "Nitratos, nitritos, fosfatos y silicatos esenciales para la vida marina",
-        "descripcion_en": "Nitrates, nitrites, phosphates, and silicates essential for marine life",
+        "descripcion": "Elementos quimicos compuestos por nitrogeno, fosforo y silicio, esenciales para el crecimiento del fitoplancton.",
+        "descripcion_en": "Chemical elements composed of nitrogen, phosphorus and silicon, essential for phytoplankton growth.",
         "color": "#e6d9ac",
         "familia": "biogeoquimicas"
       },
@@ -53,8 +53,8 @@
         "key": "OD",
         "nombre": "Oxígeno Disuelto",
         "nombre_en": "Dissolved Oxygen",
-        "descripcion": "Cantidad de oxígeno disponible para los organismos marinos",
-        "descripcion_en": "Amount of oxygen available for marine organisms",
+        "descripcion": "Cantidad de oxígeno disuelto en el agua de mar.",
+        "descripcion_en": "Amount of dissolved oxygen in seawater.",
         "color": "#7B1E2B",
         "familia": "biogeoquimicas"
       },
@@ -62,8 +62,8 @@
         "key": "AT",
         "nombre": "Sistema de Carbonatos",
         "nombre_en": "Carbonate System",
-        "descripcion": "pH y alcalinidad, indicadores del sistema de CO₂",
-        "descripcion_en": "pH and alkalinity, indicators of the CO₂ system",
+        "descripcion": "Elementos quimicos que se forman cuando el dioxido de carbono se disuelve en el agua de mar. Claves para el fitoplancton y organismos con concha y esqueleto.",
+        "descripcion_en": "Chemical elements that form when carbon dioxide dissolves in seawater. Key to phytoplankton and organisms with shells and skeletons.",
         "color": "#3c6496",
         "familia": "biogeoquimicas"
       },
@@ -71,8 +71,8 @@
         "key": "Cla",
         "nombre": "Clorofila-a",
         "nombre_en": "Chlorophyll-a",
-        "descripcion": "Pigmento verde de las algas, indica cantidad de fitoplancton",
-        "descripcion_en": "Green pigment in algae, indicates phytoplankton abundance",
+        "descripcion": "Pigmento que permite al fitoplancton realizar la fotosíntesis.",
+        "descripcion_en": "Pigment that allows phytoplankton to perform photosynthesis.",
         "color": "#D57200",
         "familia": "bioopticas"
       },
@@ -80,8 +80,8 @@
         "key": "ABSO",
         "nombre": "Absorción Particulado",
         "nombre_en": "Particulate Absorption",
-        "descripcion": "Cómo el agua absorbe la luz, relacionado con partículas suspendidas",
-        "descripcion_en": "How water absorbs light, related to suspended particles",
+        "descripcion": "La cantidad de particulas organicas en suspensión que absorben la luz (fitplancton y detritos).",
+        "descripcion_en": "The amount of suspended organic particles that absorb light (phytoplankton and detritus).",
         "color": "#A03A2E",
         "familia": "bioopticas"
       },
@@ -89,8 +89,8 @@
         "key": "CDOM",
         "nombre": "CDOM",
         "nombre_en": "CDOM",
-        "descripcion": "Materia orgánica disuelta coloreada que da color al agua",
-        "descripcion_en": "Colored Dissolved Organic Matter that tints the water",
+        "descripcion": "Materia orgánica disuelta coloreada en el agua de mar que absorbe luz.",
+        "descripcion_en": "Colored dissolved organic matter in seawater that absorbs light.",
         "color": "#F2A900",
         "familia": "bioopticas"
       },
@@ -98,8 +98,8 @@
         "key": "BACT",
         "nombre": "Bacterioplancton",
         "nombre_en": "Bacterioplankton",
-        "descripcion": "Microorganismos que reciclan nutrientes en el océano",
-        "descripcion_en": "Microorganisms that recycle nutrients in the ocean",
+        "descripcion": "Recicladores del mar, descomponen organismos muertos y materiales de desechos.",
+        "descripcion_en": "Recyclers of the sea, they decompose dead organisms and waste materials.",
         "color": "#1a2f46",
         "familia": "biologicas"
       },
@@ -107,8 +107,8 @@
         "key": "FITO",
         "nombre": "Fitoplancton",
         "nombre_en": "Phytoplankton",
-        "descripcion": "Algas microscópicas base de la cadena alimentaria",
-        "descripcion_en": "Microscopic algae, the base of the food web",
+        "descripcion": "Organismos microscópicos fotosintéticos, que nutren a todos los organismos marinos.",
+        "descripcion_en": "Microscopic photosynthetic organisms that nourish all marine organisms.",
         "color": "#6DD3C9",
         "familia": "biologicas"
       },
@@ -116,8 +116,8 @@
         "key": "ZOO",
         "nombre": "Zooplancton",
         "nombre_en": "Zooplankton",
-        "descripcion": "Pequeños animales que se alimentan del fitoplancton",
-        "descripcion_en": "Small animals that feed on phytoplankton",
+        "descripcion": "Pequeños animales que sirven de alimentos de otros organismos de mayor tamaño.",
+        "descripcion_en": "Small animals that serve as food for other larger organisms.",
         "color": "#009688",
         "familia": "biologicas"
       },
@@ -125,8 +125,8 @@
         "key": "ICTIO",
         "nombre": "Ictioplancton",
         "nombre_en": "Ichthyoplankton",
-        "descripcion": "Huevos y larvas de peces",
-        "descripcion_en": "Fish eggs and larvae",
+        "descripcion": "Parte de zooplancton formada por huevos y larvas de peces.",
+        "descripcion_en": "Part of zooplankton made up of fish eggs and larvae.",
         "color": "#007B7F",
         "familia": "biologicas"
       },
@@ -134,8 +134,8 @@
         "key": "PP",
         "nombre": "Producción Primaria",
         "nombre_en": "Primary Production",
-        "descripcion": "Cantidad de carbono fijado por fotosíntesis del fitoplancton",
-        "descripcion_en": "Amount of carbon fixed by phytoplankton photosynthesis",
+        "descripcion": "Proceso en el que el fitoplancton usa la luz solar para convertir el dióxido de carbono en materia orgánica (fijación de carbono).",
+        "descripcion_en": "Process in which phytoplankton uses sunlight to convert carbon dioxide into organic matter (carbon fixation).",
         "color": "#000000",
         "familia": "produccion"
       }
@@ -175,55 +175,55 @@
     "barcos": {
       "AD": {
         "nombre": "Aldebarán",
-        "descripcion": "Buque de investigación de DINARA (Uruguay). 36.7m de eslora. Realiza evaluación de recursos pesqueros y oceanografía.",
+        "descripcion": "Buque de investigación oceanografico y pesquero de la DINARA (Uruguay). 36.7m de eslora.",
         "descripcion_en": "DINARA (Uruguay) research vessel. 36.7m length. Conducts fisheries resource assessment and oceanography.",
         "color": "#FF9B85"
       },
       "AH": {
         "nombre": "Bernardo Houssay",
-        "descripcion": "Motovelero oceanográfico de Prefectura Naval. Ex 'Atlantis' (1930), modernizado para ciencia. 43.5m de eslora.",
+        "descripcion": "Motovelero oceanográfico de Prefectura Naval. Ex 'Atlantis' (1930). 43.5m de eslora.",
         "descripcion_en": "Oceanographic motorsailer of the Naval Prefecture. Ex 'Atlantis' (1930), modernized for science. 43.5m length.",
         "color": "#FFBA08"
       },
       "CC": {
         "nombre": "Capitán Cánepa",
-        "descripcion": "Buque histórico del INIDEP (1964-2019). Ex pesquero adaptado. 39m de eslora. Realizó más de 200 campañas.",
+        "descripcion": "Buque histórico del INIDEP (1964-2019). 39m de eslora.",
         "descripcion_en": "Historic INIDEP vessel (1964-2019). Adapted former fishing vessel. 39m length. Conducted over 200 campaigns.",
         "color": "#d00000"
       },
       "CR": {
         "nombre": "Comodoro Rivadavia",
-        "descripcion": "Buque hidrográfico de la Armada (1974-2024). 52m de eslora. Relevamientos batimétricos y oceanográficos.",
+        "descripcion": "Buque hidrográfico de la Armada Argentina (1974-2024). 52m de eslora.",
         "descripcion_en": "Navy hydrographic vessel (1974-2024). 52m length. Bathymetric and oceanographic surveys.",
         "color": "#8FE388"
       },
       "EH": {
         "nombre": "Eduardo Holmberg",
-        "descripcion": "Buque del INIDEP construido en Japón (1980). 61m de eslora. Especializado en investigación pesquera y ambiental.",
+        "descripcion": "Buque de investigación pesquero oceanográfico del INIDEP. 61m de eslora.",
         "descripcion_en": "INIDEP vessel built in Japan (1980). 61m length. Specialized in fisheries and environmental research.",
         "color": "#1B998B"
       },
       "MA": {
         "nombre": "Mar Argentino",
-        "descripcion": "Buque costero del INIDEP (2020). 36m de eslora. Silencioso y moderno, para evaluación de recursos costeros.",
+        "descripcion": "Buque de investigación pesquero oceanográfico del INIDEP (2020). 36m de eslora.",
         "descripcion_en": "INIDEP coastal vessel (2020). 36m length. Silent and modern, for coastal resource assessment.",
         "color": "#3185FC"
       },
       "OB": {
         "nombre": "Oca Balda",
-        "descripcion": "Buque del INIDEP (ahora APN), construido en Alemania (1983). 65m de eslora. Investigación en áreas marinas protegidas.",
+        "descripcion": "Buque de investigación pesquero oceanográfico del INIDEP (ahora APN), 65m de eslora.",
         "descripcion_en": "INIDEP vessel (now APN), built in Germany (1983). 65m length. Research in marine protected areas.",
         "color": "#5D2E8C"
       },
       "PD": {
         "nombre": "Puerto Deseado",
-        "descripcion": "Buque oceanográfico de Armada/CONICET (1978). 76m de eslora. Casco reforzado para operar en aguas antárticas.",
+        "descripcion": "Buque oceanográfico de CONICET (1978). 76m de eslora.",
         "descripcion_en": "Navy/CONICET oceanographic vessel (1978). 76m length. Reinforced hull for Antarctic operations.",
         "color": "#CBFF8C"
       },
       "VA": {
         "nombre": "Victor Angelescu",
-        "descripcion": "Buque de última generación del INIDEP (2017). 52.8m de eslora. Equipado para oceanografía y pesca en todo el Mar Argentino.",
+        "descripcion": "Buque de investigación pesquero oceanográfico del INIDEP (2017). 52.8m de eslora.",
         "descripcion_en": "State-of-the-art INIDEP vessel (2017). 52.8m length. Equipped for oceanography and fisheries throughout the Argentine Sea.",
         "color": "#FF7B9C"
       }
@@ -244,7 +244,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -262,7 +265,10 @@
       "nro_visitas": "multiple",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -283,7 +289,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -304,7 +313,10 @@
       "nro_visitas": "multiple",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -325,7 +337,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -347,7 +362,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -368,7 +386,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -389,8 +410,14 @@
       "nro_visitas": "multiple",
       "tipo": "Propia",
       "barcos": [
-        "OB",
-        "CC"
+        {
+          "code": "OB",
+          "tipo": "Propia"
+        },
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -412,7 +439,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -433,7 +463,10 @@
       "nro_visitas": "multiple",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -455,7 +488,10 @@
       "nro_visitas": "multiple",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -477,7 +513,10 @@
       "nro_visitas": "multiple",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -499,7 +538,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -519,7 +561,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -538,7 +583,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -565,7 +613,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "EH"
+        {
+          "code": "EH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -605,7 +656,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -626,7 +680,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -648,7 +705,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -670,7 +730,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -692,7 +755,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -713,7 +779,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -735,7 +804,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -757,7 +829,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -787,7 +862,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -808,7 +886,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -870,7 +951,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -900,7 +984,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -922,7 +1009,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -943,7 +1033,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -973,7 +1066,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -994,7 +1090,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1015,7 +1114,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1035,7 +1137,10 @@
       "nro_visitas": "multiple",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1057,7 +1162,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1079,7 +1187,10 @@
       "nro_visitas": "multiple",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1109,7 +1220,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1130,7 +1244,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1151,7 +1268,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1172,7 +1292,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1193,7 +1316,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1215,7 +1341,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1253,7 +1382,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -1289,7 +1421,10 @@
       "nro_visitas": "multiple",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1335,7 +1470,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1356,7 +1494,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1378,7 +1519,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1397,8 +1541,14 @@
       "nro_visitas": "multiple",
       "tipo": "Propia_Oportunista",
       "barcos": [
-        "PD",
-        "CC"
+        {
+          "code": "PD",
+          "tipo": "Propia"
+        },
+        {
+          "code": "CC",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -1419,7 +1569,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1456,7 +1609,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1477,8 +1633,14 @@
       "nro_visitas": "multiple",
       "tipo": "Propia_Oportunista",
       "barcos": [
-        "PD",
-        "CC"
+        {
+          "code": "PD",
+          "tipo": "Propia"
+        },
+        {
+          "code": "CC",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -1540,8 +1702,14 @@
       "nro_visitas": "multiple",
       "tipo": "Propia_Oportunista",
       "barcos": [
-        "CC",
-        "PD"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        },
+        {
+          "code": "PD",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -1564,7 +1732,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1585,7 +1756,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1606,7 +1780,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "EH"
+        {
+          "code": "EH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1627,7 +1804,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1657,7 +1837,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1702,7 +1885,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1740,7 +1926,10 @@
       "nro_visitas": "multiple",
       "tipo": "Propia_Oportunista",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1848,7 +2037,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1870,7 +2062,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -1887,7 +2082,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1909,7 +2107,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -1926,7 +2127,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1946,7 +2150,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1968,7 +2175,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -1999,7 +2209,10 @@
       "nro_visitas": "multiple",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -2029,7 +2242,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -2083,7 +2299,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -2141,7 +2360,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "PD"
+        {
+          "code": "PD",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -2162,7 +2384,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -2191,8 +2416,14 @@
       "nro_visitas": "multiple",
       "tipo": "Propia_Oportunista",
       "barcos": [
-        "PD",
-        "CC"
+        {
+          "code": "PD",
+          "tipo": "Propia"
+        },
+        {
+          "code": "CC",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -2222,8 +2453,14 @@
       "nro_visitas": "multiple",
       "tipo": "Propia_Oportunista",
       "barcos": [
-        "PD",
-        "CC"
+        {
+          "code": "PD",
+          "tipo": "Propia"
+        },
+        {
+          "code": "CC",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -2246,7 +2483,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CC"
+        {
+          "code": "CC",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -2267,7 +2507,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -2313,7 +2556,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -2335,7 +2581,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "PD"
+        {
+          "code": "PD",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -2368,7 +2617,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "AD"
+        {
+          "code": "AD",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -2446,7 +2698,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "PD"
+        {
+          "code": "PD",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -2480,7 +2735,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -2519,8 +2777,14 @@
       "nro_visitas": "multiple",
       "tipo": "Oportunista",
       "barcos": [
-        "EH",
-        "OB"
+        {
+          "code": "EH",
+          "tipo": "Oportunista"
+        },
+        {
+          "code": "OB",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -2581,7 +2845,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -2604,7 +2871,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "CR"
+        {
+          "code": "CR",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -2626,7 +2896,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -2661,7 +2934,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "EH"
+        {
+          "code": "EH",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -2679,8 +2955,14 @@
       "nro_visitas": "multiple",
       "tipo": "Oportunista",
       "barcos": [
-        "EH",
-        "OB"
+        {
+          "code": "EH",
+          "tipo": "Oportunista"
+        },
+        {
+          "code": "OB",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -2708,7 +2990,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "OB"
+        {
+          "code": "OB",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -2810,7 +3095,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -2838,7 +3126,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -2893,7 +3184,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -2964,7 +3258,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -2988,7 +3285,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "PD"
+        {
+          "code": "PD",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -3032,7 +3332,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3055,8 +3358,14 @@
       "nro_visitas": "multiple",
       "tipo": "Propia_Oportunista",
       "barcos": [
-        "EH",
-        "AH"
+        {
+          "code": "EH",
+          "tipo": "Propia"
+        },
+        {
+          "code": "AH",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -3079,7 +3388,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "PD"
+        {
+          "code": "PD",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -3114,7 +3426,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "EH"
+        {
+          "code": "EH",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -3150,7 +3465,10 @@
       "nro_visitas": "multiple",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3174,7 +3492,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "PD"
+        {
+          "code": "PD",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -3204,7 +3525,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3228,7 +3552,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3260,7 +3587,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3292,7 +3622,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "EH"
+        {
+          "code": "EH",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -3312,7 +3645,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "EH"
+        {
+          "code": "EH",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -3340,7 +3676,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "VA"
+        {
+          "code": "VA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3362,151 +3701,178 @@
     {
       "year": 2018,
       "month": "may",
-      "nro_visitas": "multiple",
-      "tipo": "Propia_Oportunista",
-      "barcos": [
-        "VA",
-        "AH"
-      ],
-      "variables": [
-        "Temp",
-        "Sal",
-        "NTS",
-        "OD",
-        "pH",
-        "AT",
-        "Cla",
-        "ABSO",
-        "CDOM",
-        "BACT",
-        "FITO",
-        "ZOO",
-        "ICTIO"
-      ]
-    },
-    {
-      "year": 2018,
-      "month": "jun",
-      "nro_visitas": "unica",
-      "tipo": "Propia",
-      "barcos": [
-        "AH"
-      ],
-      "variables": [
-        "Temp",
-        "Sal",
-        "NTS",
-        "pH",
-        "AT",
-        "Cla",
-        "ABSO",
-        "CDOM",
-        "BACT",
-        "FITO",
-        "ZOO",
-        "ICTIO"
-      ]
-    },
-    {
-      "year": 2018,
-      "month": "jul",
-      "nro_visitas": "unica",
-      "tipo": "Propia",
-      "barcos": [
-        "AH"
-      ],
-      "variables": [
-        "Temp",
-        "Sal",
-        "NTS",
-        "OD",
-        "pH",
-        "AT",
-        "Cla",
-        "ABSO",
-        "CDOM",
-        "BACT",
-        "FITO",
-        "ZOO",
-        "ICTIO"
-      ]
-    },
-    {
-      "year": 2018,
-      "month": "ago",
-      "nro_visitas": "unica",
-      "tipo": "Oportunista",
-      "barcos": [
-        "VA"
-      ],
-      "variables": [
-        "Temp",
-        "Sal",
-        "NTS",
-        "Cla",
-        "ABSO",
-        "CDOM",
-        "FITO"
-      ]
-    },
-    {
-      "year": 2018,
-      "month": "sep",
-      "nro_visitas": "unica",
-      "tipo": "Propia",
-      "barcos": [
-        "AH"
-      ],
-      "variables": [
-        "Temp",
-        "Sal",
-        "NTS",
-        "OD",
-        "pH",
-        "AT",
-        "Cla",
-        "ABSO",
-        "CDOM",
-        "FITO",
-        "ZOO",
-        "ICTIO"
-      ]
-    },
-    {
-      "year": 2018,
-      "month": "oct",
-      "nro_visitas": "unica",
-      "tipo": "Oportunista",
-      "barcos": [
-        "VA"
-      ],
-      "variables": [
-        "Temp",
-        "Sal",
-        "NTS",
-        "Cla",
-        "ABSO",
-        "FITO",
-        "ZOO",
-        "ICTIO"
-      ]
-    },
-    {
-      "year": 2018,
-      "month": "nov",
-      "nro_visitas": null,
-      "tipo": "NA",
-      "barcos": [],
-      "variables": []
-    },
-    {
-      "year": 2018,
-      "month": "dic",
       "nro_visitas": "multiple",
       "tipo": "Propia_Oportunista",
       "barcos": [
-        "AH",
-        "VA"
+        {
+          "code": "VA",
+          "tipo": "Propia"
+        },
+        {
+          "code": "AH",
+          "tipo": "Oportunista"
+        }
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "jun",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "ago",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        {
+          "code": "VA",
+          "tipo": "Oportunista"
+        }
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "FITO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "sep",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "oct",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        {
+          "code": "VA",
+          "tipo": "Oportunista"
+        }
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "ABSO",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2018,
+      "month": "nov",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2018,
+      "month": "dic",
+      "nro_visitas": "multiple",
+      "tipo": "Propia_Oportunista",
+      "barcos": [
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        },
+        {
+          "code": "VA",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -3530,7 +3896,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "VA"
+        {
+          "code": "VA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3571,7 +3940,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3602,7 +3974,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "VA"
+        {
+          "code": "VA",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -3620,7 +3995,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3652,7 +4030,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3676,7 +4057,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3707,7 +4091,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "VA"
+        {
+          "code": "VA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3732,7 +4119,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3762,7 +4152,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3808,7 +4201,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "VA"
+        {
+          "code": "VA",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -3860,7 +4256,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "EH"
+        {
+          "code": "EH",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -3877,7 +4276,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "VA"
+        {
+          "code": "VA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -3902,7 +4304,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "EH"
+        {
+          "code": "EH",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -3942,7 +4347,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "VA"
+        {
+          "code": "VA",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -3958,7 +4366,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "VA"
+        {
+          "code": "VA",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -3992,7 +4403,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "VA"
+        {
+          "code": "VA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4017,7 +4431,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "EH"
+        {
+          "code": "EH",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -4034,7 +4451,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "VA"
+        {
+          "code": "VA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4075,7 +4495,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "MA"
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4107,7 +4530,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "MA"
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4130,7 +4556,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "MA"
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4162,7 +4591,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "MA"
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4185,7 +4617,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "EH"
+        {
+          "code": "EH",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -4204,7 +4639,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "MA"
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4236,7 +4674,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "MA"
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4276,7 +4717,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "MA"
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4305,7 +4749,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "MA"
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4329,7 +4776,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "MA"
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4353,7 +4803,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "VA"
+        {
+          "code": "VA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4401,7 +4854,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4433,7 +4889,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "VA"
+        {
+          "code": "VA",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "ZOO",
@@ -4446,7 +4905,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "AH"
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4478,7 +4940,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "MA"
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4502,7 +4967,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "MA"
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4534,8 +5002,14 @@
       "nro_visitas": "multiple",
       "tipo": "Propia_Oportunista",
       "barcos": [
-        "VA",
-        "MA"
+        {
+          "code": "VA",
+          "tipo": "Propia"
+        },
+        {
+          "code": "MA",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -4567,7 +5041,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "MA"
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4591,7 +5068,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "VA"
+        {
+          "code": "VA",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -4612,7 +5092,10 @@
       "nro_visitas": "unica",
       "tipo": "Oportunista",
       "barcos": [
-        "MA"
+        {
+          "code": "MA",
+          "tipo": "Oportunista"
+        }
       ],
       "variables": [
         "Temp",
@@ -4630,7 +5113,10 @@
       "nro_visitas": "unica",
       "tipo": "Propia",
       "barcos": [
-        "MA"
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
       ],
       "variables": [
         "Temp",
@@ -4647,6 +5133,248 @@
         "ZOO",
         "ICTIO"
       ]
+    },
+    {
+      "year": 2025,
+      "month": "ene",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2025,
+      "month": "feb",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2025,
+      "month": "mar",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2025,
+      "month": "abr",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2025,
+      "month": "may",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2025,
+      "month": "jun",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
+    },
+    {
+      "year": 2025,
+      "month": "jul",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        {
+          "code": "MA",
+          "tipo": "Propia"
+        }
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2025,
+      "month": "ago",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2025,
+      "month": "sep",
+      "nro_visitas": "unica",
+      "tipo": "Oportunista",
+      "barcos": [
+        {
+          "code": "VA",
+          "tipo": "Oportunista"
+        }
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "Cla",
+        "BACT",
+        "FITO"
+      ]
+    },
+    {
+      "year": 2025,
+      "month": "oct",
+      "nro_visitas": "unica",
+      "tipo": "Propia",
+      "barcos": [
+        {
+          "code": "AH",
+          "tipo": "Propia"
+        }
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "pH",
+        "AT",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "BACT",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2025,
+      "month": "nov",
+      "nro_visitas": "multiple",
+      "tipo": "Propia_Oportunista",
+      "barcos": [
+        {
+          "code": "VA",
+          "tipo": "Propia"
+        },
+        {
+          "code": "AH",
+          "tipo": "Oportunista"
+        }
+      ],
+      "variables": [
+        "Temp",
+        "Sal",
+        "NTS",
+        "OD",
+        "Cla",
+        "ABSO",
+        "CDOM",
+        "PP",
+        "FITO",
+        "ZOO",
+        "ICTIO"
+      ]
+    },
+    {
+      "year": 2025,
+      "month": "dic",
+      "nro_visitas": null,
+      "tipo": "NA",
+      "barcos": [],
+      "variables": []
     }
   ]
 }
