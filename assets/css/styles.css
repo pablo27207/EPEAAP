@@ -207,9 +207,16 @@ footer {
     flex-wrap: wrap;
 }
 
-/* Logo EPEA es circular y necesita más altura para verse igual */
+/* Logo EPEA es circular y debe resaltar */
 .footer-logo-epea {
-    height: 50px;
+    height: 140px;
+    opacity: 0.8;
+}
+
+/* Logos INIDEP y UNPSJB un poco más grandes */
+.footer-logo-inidep,
+.footer-logo-unpsjb {
+    height: 45px;
 }
 
 /* Error message */
