@@ -1,6 +1,6 @@
 /**
- * EPEAAPV2 - Main Application Logic
- * Orchestrates data loading, UI initialization, and event handling.
+ * EPEAAPV2 - Lógica Principal de la Aplicación
+ * Orquesta la carga de datos, inicialización de UI y manejo de eventos.
  */
 
 import { renderCircle, loadSVGTemplate } from './svgRenderer.js';
@@ -11,9 +11,9 @@ import { translations } from './translations.js';
 let svgTemplate = null;
 let epeaData = null;
 let currentLanguage = 'es';
-let currentCampaña = null; // Store current campaign for re-rendering modal
+let currentCampaña = null; // Almacena la campaña actual para re-renderizar el modal
 
-// Parametros agrupados por familia para cada lado
+// Parámetros agrupados por familia para cada lado
 const LEFT_FAMILIES = {
     'fisicas': ['param-temperatura', 'param-salinidad'],
     'biogeoquimicas': ['param-oxigeno', 'param-nutrientes', 'param-carbonatos'],
@@ -25,6 +25,9 @@ const RIGHT_FAMILIES = {
     'biologicas': ['param-fitoplancton', 'param-zooplankton', 'param-ictioplankton', 'param-bacterioplankton']
 };
 
+/**
+ * Inicializa la aplicación: carga datos y configura la UI.
+ */
 async function init() {
     try {
         const [dataResponse, template] = await Promise.all([
@@ -35,7 +38,7 @@ async function init() {
         epeaData = await dataResponse.json();
         svgTemplate = template;
 
-        // Setup Language Toggles
+        // Configurar selectores de idioma
         setupLanguageControls();
 
         // Calcular años y texto inicial
@@ -52,6 +55,9 @@ async function init() {
     }
 }
 
+/**
+ * Configura los manejadores de eventos para los botones de idioma.
+ */
 function setupLanguageControls() {
     const btns = document.querySelectorAll('.lang-btn');
     btns.forEach(btn => {
@@ -64,38 +70,45 @@ function setupLanguageControls() {
     });
 }
 
+/**
+ * Cambia el idioma actual y actualiza la interfaz.
+ * @param {string} lang - Código de idioma ('es' o 'en')
+ */
 function setLanguage(lang) {
     currentLanguage = lang;
 
-    // Update active button state
+    // Actualizar estado del botón activo
     document.querySelectorAll('.lang-btn').forEach(btn => {
         if (btn.dataset.lang === lang) btn.classList.add('active');
         else btn.classList.remove('active');
     });
 
-    // Update static texts
+    // Actualizar textos estáticos
     updateUITexts();
 
-    // Re-render grid (for month headers)
+    // Re-renderizar grilla (para encabezados de mes)
     generateGrid();
 
-    // Re-render modal if open
+    // Re-renderizar modal si está abierto
     const modal = document.getElementById('modal');
     if (modal && !modal.classList.contains('hidden') && currentCampaña) {
-        // Simple re-render without animation
+        // Re-renderizado simple sin animación
         renderModalContent(currentCampaña);
     }
 }
 
+/**
+ * Actualiza los textos estáticos de la interfaz según el idioma.
+ */
 function updateUITexts() {
     const t = translations[currentLanguage];
 
-    // Header
+    // Encabezado
     const h1 = document.querySelector('header h1');
-    // Preserve span if possible, or just rebuild
+    // Preservar span si es posible, o reconstruir
     h1.innerHTML = `${t.headerTitle} <span class="coordinates">(EPEA, 38°28′ S - 57°41′ O)</span>`;
 
-    // Subtitle
+    // Subtítulo
     const { yearRange } = epeaData.metadata;
     const years = yearRange[1] - yearRange[0] + 1;
     const subtitleEl = document.getElementById('main-subtitle');
@@ -107,6 +120,9 @@ function updateUITexts() {
     }
 }
 
+/**
+ * Ejecuta las animaciones de entrada al cargar la página.
+ */
 function animateOnLoad() {
     anime({
         targets: 'header h1',
@@ -136,9 +152,12 @@ function animateOnLoad() {
     });
 }
 
+/**
+ * Genera la grilla principal de campañas (años x meses).
+ */
 function generateGrid() {
     const container = document.getElementById('grid-container');
-    container.innerHTML = ''; // Clear existing
+    container.innerHTML = ''; // Limpiar existente
 
     const { yearRange } = epeaData.metadata;
     const t = translations[currentLanguage];
@@ -155,7 +174,7 @@ function generateGrid() {
     });
     container.appendChild(headerRow);
 
-    // Helper map to match data month keys (always es) to display index
+    // Mapa auxiliar para coincidir claves de mes de datos (siempre es) con índice de visualización
     const monthKeys = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
 
     for (let year = yearRange[0]; year <= yearRange[1]; year++) {
@@ -197,6 +216,11 @@ function generateGrid() {
     }
 }
 
+/**
+ * Anima una celda de la grilla al pasar el mouse.
+ * @param {HTMLElement} cell - Elemento de la celda
+ * @param {boolean} isEntering - true si el mouse entra, false si sale
+ */
 function animateCellHover(cell, isEntering) {
     anime.remove(cell);
     anime({
@@ -207,6 +231,9 @@ function animateCellHover(cell, isEntering) {
     });
 }
 
+/**
+ * Configura los eventos globales del modal (cerrar).
+ */
 function setupModal() {
     const closeBtn = document.getElementById('modal-close');
     const overlay = document.getElementById('modal-overlay');
@@ -219,6 +246,10 @@ function setupModal() {
     });
 }
 
+/**
+ * Abre el modal con los detalles de una campaña específica.
+ * @param {Object} campaña - Datos de la campaña a mostrar
+ */
 function openModal(campaña) {
     currentCampaña = campaña;
     const modal = document.getElementById('modal');
@@ -261,6 +292,10 @@ function openModal(campaña) {
     });
 }
 
+/**
+ * Renderiza el contenido interno del modal (títulos, diagrama, etiquetas).
+ * @param {Object} campaña - Datos de la campaña
+ */
 function renderModalContent(campaña) {
     const titleEl = document.getElementById('modal-title');
     const subtitleEl = document.getElementById('modal-subtitle');
@@ -268,7 +303,7 @@ function renderModalContent(campaña) {
     const labelsLeft = document.getElementById('modal-labels-left');
     const labelsRight = document.getElementById('modal-labels-right');
 
-    // Full month names mapping
+    // Mapeo completo de nombres de meses
     const fullMonths = {
         es: { 'ene': 'Enero', 'feb': 'Febrero', 'mar': 'Marzo', 'abr': 'Abril', 'may': 'Mayo', 'jun': 'Junio', 'jul': 'Julio', 'ago': 'Agosto', 'sep': 'Septiembre', 'oct': 'Octubre', 'nov': 'Noviembre', 'dic': 'Diciembre' },
         en: { 'ene': 'January', 'feb': 'February', 'mar': 'March', 'abr': 'April', 'may': 'May', 'jun': 'June', 'jul': 'July', 'ago': 'August', 'sep': 'September', 'oct': 'October', 'nov': 'November', 'dic': 'December' }
@@ -278,7 +313,7 @@ function renderModalContent(campaña) {
     titleEl.textContent = `${monthName} ${campaña.year}`;
     subtitleEl.textContent = '';
 
-    // Add or update "Propiedades estudiadas" label below the divider
+    // Agregar o actualizar etiqueta "Propiedades estudiadas" debajo del divisor
     const modalContent = document.querySelector('.modal-content');
     let propsLabel = document.getElementById('modal-props-label');
     if (!propsLabel) {
@@ -290,14 +325,14 @@ function renderModalContent(campaña) {
     }
     propsLabel.textContent = currentLanguage === 'en' ? 'STUDIED PROPERTIES' : 'PROPIEDADES ESTUDIADAS';
 
-    // Clear diagram area
+    // Limpiar área del diagrama
     diagramContainer.innerHTML = '';
 
     const visitas = campaña.visitas || [];
     const hasMultipleVisits = visitas.length > 1;
 
     if (hasMultipleVisits) {
-        // Multi-disc mode: render individual discs per visit
+        // Modo multi-disco: renderizar discos individuales por visita
         diagramContainer.classList.add('multi-disc');
 
 
@@ -305,7 +340,7 @@ function renderModalContent(campaña) {
             const discWrapper = document.createElement('div');
             discWrapper.className = 'disc-wrapper';
 
-            // Create per-visit campaña for SVG rendering (single barco, visit-specific variables)
+            // Crear campaña por visita para renderizado de SVG (barco único, variables específicas de la visita)
             const visitCampaña = {
                 year: campaña.year,
                 month: campaña.month,
@@ -326,7 +361,7 @@ function renderModalContent(campaña) {
             diagramContainer.appendChild(discWrapper);
         });
     } else {
-        // Single-disc mode: render as before
+        // Modo disco único: renderizar como antes
         diagramContainer.classList.remove('multi-disc');
 
         const svgWrapper = document.createElement('div');
@@ -338,7 +373,7 @@ function renderModalContent(campaña) {
         diagramContainer.appendChild(svgWrapper);
     }
 
-    // Labels with Language (always use combined campaign data, including ships in right panel)
+    // Etiquetas con idioma (usar siempre datos combinados de campaña, incluyendo barcos en panel derecho)
     labelsLeft.innerHTML = buildGroupedLabels(LEFT_FAMILIES, campaña, 'left', epeaData.config, currentLanguage, translations[currentLanguage]);
     labelsRight.innerHTML = buildGroupedLabels(RIGHT_FAMILIES, campaña, 'right', epeaData.config, currentLanguage, translations[currentLanguage]);
 
@@ -348,6 +383,9 @@ function renderModalContent(campaña) {
     }, 50);
 }
 
+/**
+ * Cierra el modal con animación.
+ */
 function closeModal() {
     currentCampaña = null;
     anime({

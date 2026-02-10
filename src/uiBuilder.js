@@ -1,5 +1,15 @@
-import { BRUSH_PATH_DATA } from './constants.js';
+import { getBrushIcon } from './icons.js';
 
+/**
+ * Construye el HTML para las etiquetas de parámetros agrupadas por familia.
+ * @param {Object} familyGroups - Objeto con familias y sus arrays de parámetros
+ * @param {Object} campaña - Datos de la campaña actual
+ * @param {string} side - Lado de visualización ('left' o 'right')
+ * @param {Object} config - Configuración global (colores, nombres)
+ * @param {string} lang - Idioma actual ('es' o 'en')
+ * @param {Object} t - Traducciones
+ * @returns {string} - HTML generado
+ */
 export function buildGroupedLabels(familyGroups, campaña, side, config, lang = 'es', t = {}) {
     const { parametros, familias, barcos } = config;
     let html = '';
@@ -8,7 +18,7 @@ export function buildGroupedLabels(familyGroups, campaña, side, config, lang = 
         const familiaConfig = familias[familiaKey];
         if (!familiaConfig) return;
 
-        // Solo mostrar familia si tiene al menos un parámetro
+        // Solo mostrar familia si tiene al menos un parámetro activo
         const famParams = paramIds.map(id => ({
             id,
             config: parametros[id],
@@ -19,9 +29,7 @@ export function buildGroupedLabels(familyGroups, campaña, side, config, lang = 
 
         // Limpiar título y traducir
         let familyName = lang === 'en' ? (familiaConfig.nombre_en || familiaConfig.nombre) : familiaConfig.nombre;
-        // Clean "PROPIEDADES " only for Spanish if present, or generic cleaning. 
-        // English names are "Physical Properties", maybe they want "Physical".
-        // Spanish logic was to remove "PROPIEDADES ".
+        // Limpiar "PROPIEDADES " solo para español si está presente, o limpieza genérica para inglés
         if (lang === 'es') {
             familyName = familyName.replace(/^PROPIEDADES\s+/i, '');
         } else {
@@ -43,10 +51,8 @@ export function buildGroupedLabels(familyGroups, campaña, side, config, lang = 
     if (side === 'right' && campaña.barcos && campaña.barcos.length > 0) {
         const shipsTitle = t.shipsTitle || 'BUQUES DE INVESTIGACIÓN';
 
-
-
-        // Labels para tipos de visita
-        const visitTypeLabels = t.visitType || { directed: 'Dirigida', opportunistic: 'Oportunista', mixed: 'Dirigida + Oportunista' };
+        // Etiquetas para tipos de visita (elimina mixed que no se usa)
+        const visitTypeLabels = t.visitType || { directed: 'Dirigida', opportunistic: 'Oportunista' };
 
         // Función para obtener etiqueta del tipo individual de cada barco
         const getShipTypeLabel = (tipoBarco) => {
@@ -97,6 +103,14 @@ export function buildGroupedLabels(familyGroups, campaña, side, config, lang = 
     return html;
 }
 
+/**
+ * Genera el HTML para una etiqueta individual de parámetro.
+ * @param {string} paramId - ID del parámetro
+ * @param {Object} paramConfig - Configuración del parámetro
+ * @param {boolean} isActive - Si el parámetro está activo en la campaña
+ * @param {string} lang - Idioma actual
+ * @returns {string} - HTML de la etiqueta
+ */
 function createLabelHTML(paramId, paramConfig, isActive, lang = 'es') {
     // Caso especial para PP: usar patrón de puntos triangulares
     const isPP = paramId === 'parametro-pp';
@@ -107,11 +121,7 @@ function createLabelHTML(paramId, paramConfig, isActive, lang = 'es') {
     } else {
         colorIndicator = `
             <div class="param-color-wrapper">
-                <svg class="param-color-svg brush-svg" viewBox="0 0 35 15" preserveAspectRatio="xMidYMid meet">
-                    <g transform="translate(-525, -495)">
-                        <path d="${BRUSH_PATH_DATA}" fill="${paramConfig.color}" />
-                    </g>
-                </svg>
+                ${getBrushIcon(paramConfig.color)}
             </div>
         `;
     }

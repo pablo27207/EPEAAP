@@ -1,5 +1,8 @@
-/* EPEAAPV2 - Versión Estable con fondo blanco */
+/* ==============================
+   EPEAAP - Styles
+   ============================== */
 
+/* --- Design Tokens --- */
 :root {
     --bg-light: #ffffff;
     --bg-subtle: #f8f9fa;
@@ -13,6 +16,7 @@
     --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
+/* --- Reset --- */
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +31,9 @@ body {
     padding: 40px 20px;
 }
 
-/* Header artístico */
+/* ==============================
+   Header
+   ============================== */
 header {
     text-align: center;
     margin-bottom: 50px;
@@ -57,7 +63,9 @@ header h1 .coordinates {
     letter-spacing: 0.02em;
 }
 
-/* Language Switch */
+/* ==============================
+   Language Switch
+   ============================== */
 .lang-switch {
     display: flex;
     align-items: center;
@@ -95,14 +103,9 @@ header h1 .coordinates {
     user-select: none;
 }
 
-@media (max-width: 600px) {
-    .lang-switch {
-        top: 15px;
-        right: 20px;
-    }
-}
-
-/* Grid Container */
+/* ==============================
+   Grid
+   ============================== */
 .grid-container {
     display: flex;
     flex-direction: column;
@@ -125,7 +128,7 @@ header h1 .coordinates {
     padding-bottom: 10px;
 }
 
-/* Cells */
+/* --- Cells --- */
 .cell {
     width: var(--cell-size);
     height: var(--cell-size);
@@ -171,14 +174,16 @@ header h1 .coordinates {
     opacity: 0.4;
 }
 
-/* SVG Circle */
+/* --- SVG Circle (grid) --- */
 .epea-circle {
     width: 100%;
     height: 100%;
     transition: transform 0.3s ease;
 }
 
-/* Footer */
+/* ==============================
+   Footer
+   ============================== */
 footer {
     text-align: center;
     margin-top: 60px;
@@ -186,6 +191,14 @@ footer {
     color: var(--text-secondary);
     font-size: 0.8rem;
     letter-spacing: 0.05em;
+}
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .footer-logo {
@@ -199,34 +212,28 @@ footer {
     opacity: 1;
 }
 
-.footer-logos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-/* Logo EPEA es circular y debe resaltar */
 .footer-logo-epea {
     height: 140px;
     opacity: 0.8;
 }
 
-/* Logos INIDEP y UNPSJB un poco más grandes */
 .footer-logo-inidep,
 .footer-logo-unpsjb {
     height: 45px;
 }
 
-/* Error message */
+/* ==============================
+   Error
+   ============================== */
 .error {
     color: #dc3545;
     text-align: center;
     padding: 40px;
 }
 
-/* Modal con diseño estilo animejs */
+/* ==============================
+   Modal
+   ============================== */
 .modal {
     position: fixed;
     top: 0;
@@ -285,6 +292,7 @@ footer {
     transform: rotate(90deg);
 }
 
+/* --- Modal Header --- */
 .modal-header {
     text-align: center;
     margin-bottom: 30px;
@@ -314,7 +322,7 @@ footer {
     letter-spacing: 0.03em;
 }
 
-/* Layout principal del modal - estilo animejs */
+/* --- Modal Body Layout --- */
 .modal-body {
     display: flex;
     align-items: stretch;
@@ -324,7 +332,7 @@ footer {
     position: relative;
 }
 
-/* Contenedor del diagrama SVG */
+/* --- Modal Diagram (SVG container) --- */
 .modal-diagram {
     position: relative;
     flex: 0 0 380px;
@@ -333,7 +341,7 @@ footer {
     justify-content: center;
 }
 
-/* Multi-disc layout for multiple visits */
+/* Multi-disc layout (multiple visits) */
 .modal-diagram.multi-disc {
     flex: 1 1 auto;
     display: flex;
@@ -343,17 +351,6 @@ footer {
     justify-content: center;
     gap: 30px;
     padding: 10px 0;
-}
-
-.multi-disc-ships-title {
-    width: 100%;
-    text-align: center;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: var(--text-secondary);
-    margin: 0 0 5px 0;
-    text-transform: uppercase;
 }
 
 .disc-wrapper {
@@ -368,28 +365,6 @@ footer {
     height: 220px;
 }
 
-.disc-ship-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 12px;
-    background: var(--bg-subtle);
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-}
-
-.disc-ship-name {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--text-primary);
-}
-
-.disc-ship-type {
-    font-size: 0.65rem;
-    color: var(--text-secondary);
-    font-style: italic;
-}
-
 .modal-svg {
     position: relative;
     z-index: 2;
@@ -401,38 +376,9 @@ footer {
     transition: filter 0.3s ease;
 }
 
-/* SVG de líneas conectoras */
-.connector-lines {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-    overflow: visible;
-}
-
-.connector-line {
-    fill: none;
-    stroke: #6c757d;
-    stroke-width: 1;
-    opacity: 0.5;
-    transition: stroke 0.3s, opacity 0.3s, stroke-width 0.3s;
-}
-
-.connector-line.active {
-    stroke: #1a1a2e;
-    opacity: 1;
-    stroke-width: 2;
-}
-
-.connector-line.inactive {
-    opacity: 0.15;
-    stroke-dasharray: 3 3;
-}
-
-/* Contenedores de labels */
+/* ==============================
+   Modal Labels (left & right panels)
+   ============================== */
 .modal-labels {
     flex: 0 0 220px;
     display: flex;
@@ -454,7 +400,7 @@ footer {
     padding-left: 15px;
 }
 
-/* Grupos de familia */
+/* --- Family Groups --- */
 .family-group {
     display: flex;
     flex-direction: column;
@@ -478,7 +424,7 @@ footer {
     gap: 1px;
 }
 
-/* Etiquetas de parámetros */
+/* --- Parameter Labels --- */
 .param-label {
     display: flex;
     align-items: center;
@@ -503,7 +449,6 @@ footer {
     transform: scale(1.05);
 }
 
-/* Nivel 1: Resaltado de familia */
 .param-label.family-highlighted {
     background: rgba(200, 200, 200, 0.2);
 }
@@ -521,6 +466,7 @@ footer {
     background: transparent;
 }
 
+/* --- Parameter Color Swatch (square) --- */
 .param-color {
     width: 14px;
     height: 14px;
@@ -529,44 +475,17 @@ footer {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto de pincelada */
-/* Efecto de pincelada realista */
-/* Estados de interacción del SVG */
-#modal-epea-svg {
-    transition: all 0.3s ease;
+.param-label.highlighted .param-color {
+    transform: scale(1.3) rotate(-3deg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* #modal-epea-svg.highlighting-active eliminado por estar vacío */
-
-/* Elementos atenuados (no seleccionados) */
-.svg-dimmed {
-    opacity: 0.15 !important;
-    filter: saturate(0.1) brightness(1.2) !important;
-    transition: all 0.3s ease;
+.param-label.inactive .param-color.brush-stroke {
+    background: var(--border-color) !important;
+    opacity: 0.5;
 }
 
-/* Nivel 1: Familia (semi-resaltado) */
-.svg-family-highlight {
-    opacity: 0.5 !important;
-    filter: saturate(0.8) brightness(1.05) !important;
-    transition: all 0.3s ease;
-}
-
-/* Nivel 2: Específico (resaltado total) */
-.svg-highlighted {
-    opacity: 1 !important;
-    filter: saturate(1.3) brightness(1.1) drop-shadow(0 0 8px rgba(0, 0, 0, 0.4)) !important;
-    transition: all 0.3s ease;
-    z-index: 10;
-}
-
-/* Ajuste para evitar que el filtro afecte bordes de contenedores */
-g[id^="param-"],
-g[id^="parametro-"] {
-    isolation: isolate;
-}
-
-/* Wrapper para el SVG del pincel */
+/* --- Parameter Color Swatch (SVG brushstroke) --- */
 .param-color-wrapper {
     width: 24px;
     height: 12px;
@@ -599,7 +518,7 @@ g[id^="parametro-"] {
     filter: grayscale(0.5);
 }
 
-/* Indicador PP único (puntos triangulares) */
+/* --- PP Indicator (dot triangle) --- */
 .pp-indicator {
     display: inline-block;
     width: 16px;
@@ -616,35 +535,17 @@ g[id^="parametro-"] {
     height: 3px;
     background: #000;
     border-radius: 50%;
-    /* Triángulo de 6 puntos apuntando a la derecha:
-       Columna 1 (Izq): 3 puntos
-       Columna 2 (Medio): 2 puntos
-       Columna 3 (Der): 1 punto
-    */
     box-shadow:
         0 6px 0 #000,
         0 12px 0 #000,
-        /* Columna 1 completa */
         6px 3px 0 #000,
         6px 9px 0 #000,
-        /* Columna 2 */
         12px 6px 0 #000;
-    /* Columna 3 (Punta) */
     top: 1px;
     left: 0;
 }
 
-.param-label.highlighted .param-color {
-    transform: scale(1.3) rotate(-3deg);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-}
-
-.param-label.inactive .param-color.brush-stroke {
-    background: var(--border-color) !important;
-    opacity: 0.5;
-}
-
-/* Contenedor de texto */
+/* --- Parameter Text --- */
 .param-text {
     display: flex;
     flex-direction: column;
@@ -675,12 +576,9 @@ g[id^="parametro-"] {
     opacity: 0.4;
 }
 
-/* Línea horizontal decorativa (oculta, usamos SVG) */
-.param-line {
-    display: none;
-}
-
-/* Sección de barcos */
+/* ==============================
+   Ships Section (right panel)
+   ============================== */
 .ships-section {
     margin-top: 20px;
     padding-top: 15px;
@@ -701,7 +599,6 @@ g[id^="parametro-"] {
     align-items: center;
     gap: 8px;
     padding: 4px 6px;
-    /* Added padding for better hover target */
     border-radius: 4px;
     transition: background-color 0.2s ease;
     cursor: help;
@@ -709,7 +606,6 @@ g[id^="parametro-"] {
 
 .ship-item:hover {
     background-color: var(--bg-subtle);
-    /* Assuming this variable exists, matching param-label:hover */
 }
 
 .ship-color {
@@ -720,7 +616,6 @@ g[id^="parametro-"] {
     display: inline-block;
 }
 
-/* Indicador de visita dirigida (punto negro dentro) */
 .ship-color.directed::after {
     content: '';
     position: absolute;
@@ -739,7 +634,6 @@ g[id^="parametro-"] {
     color: var(--text-primary);
 }
 
-/* Badge de tipo de visita junto al barco */
 .ship-type-badge {
     font-size: 0.6rem;
     color: var(--text-secondary);
@@ -748,49 +642,47 @@ g[id^="parametro-"] {
     opacity: 0.8;
 }
 
-/* Indicador de frecuencia de visita (única/múltiple) */
-.visit-frequency {
-    font-size: 0.65rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    background: var(--bg-subtle);
-    padding: 4px 10px;
-    border-radius: 12px;
-    display: inline-block;
-    margin-bottom: 10px;
-    letter-spacing: 0.02em;
+/* ==============================
+   SVG Highlighting (hover interactions)
+   ============================== */
+
+/* Dimmed state (non-selected parameters) */
+.svg-dimmed {
+    opacity: 0.15 !important;
+    filter: saturate(0.1) brightness(1.2) !important;
+    transition: all 0.3s ease;
 }
 
-/* Highlight de zonas SVG */
+/* Level 1: Family highlight (semi-visible) */
+.svg-family-highlight {
+    opacity: 0.5 !important;
+    filter: saturate(0.8) brightness(1.05) !important;
+    transition: all 0.3s ease;
+}
+
+/* Level 2: Specific parameter highlight (full) */
+.svg-highlighted {
+    opacity: 1 !important;
+    filter: saturate(1.3) brightness(1.1) drop-shadow(0 0 8px rgba(0, 0, 0, 0.4)) !important;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+/* Isolate SVG parameter groups for clean filter rendering */
+g[id^="param-"],
+g[id^="parametro-"] {
+    isolation: isolate;
+}
+
+/* Transition for all SVG paths in modal */
 .modal-svg svg path,
 .modal-svg svg g {
     transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
-.modal-svg svg.dimmed path:not(.highlighted-zone),
-.modal-svg svg.dimmed g:not(.highlighted-zone) {
-    filter: saturate(0.2) brightness(1.3) !important;
-    opacity: 0.4 !important;
-}
-
-.modal-svg svg .highlighted-zone,
-.modal-svg svg path.highlighted-zone {
-    filter: saturate(1.2) brightness(1.05) drop-shadow(0 0 12px rgba(0, 0, 0, 0.4)) !important;
-    opacity: 1 !important;
-}
-
-/* Responsive */
-@media (max-width: 1000px) {
-    .modal-labels {
-        flex: 0 0 150px;
-    }
-
-    .param-name {
-        font-size: 0.7rem;
-    }
-}
-
-/* Descripción de parámetros (hover) */
+/* ==============================
+   Parameter Description (hover tooltip)
+   ============================== */
 .param-description {
     margin-top: auto;
     padding-top: 20px;
@@ -800,13 +692,24 @@ g[id^="parametro-"] {
     opacity: 0;
     transition: opacity 0.3s ease;
     min-height: 80px;
-    /* Evitar saltos de layout si fuera necesario, aunque margin-top: auto ayuda */
     pointer-events: none;
-    /* No interferir con el mouse */
 }
 
 .param-description.visible {
     opacity: 1;
+}
+
+/* ==============================
+   Responsive
+   ============================== */
+@media (max-width: 1000px) {
+    .modal-labels {
+        flex: 0 0 150px;
+    }
+
+    .param-name {
+        font-size: 0.7rem;
+    }
 }
 
 @media (max-width: 900px) {
@@ -841,15 +744,12 @@ g[id^="parametro-"] {
         height: 220px;
     }
 
-    /* Side-by-side columns below the diagram */
     .modal-labels-left {
         order: 2;
         flex: 0 0 50%;
         max-width: 50%;
-        /* Strict limit */
         min-width: 0;
         box-sizing: border-box;
-        /* Include padding in width */
         text-align: right;
         padding-right: 15px;
         padding-left: 5px;
@@ -859,16 +759,13 @@ g[id^="parametro-"] {
         order: 3;
         flex: 0 0 50%;
         max-width: 50%;
-        /* Strict limit */
         min-width: 0;
         box-sizing: border-box;
-        /* Include padding in width */
         text-align: left;
         padding-left: 15px;
         padding-right: 5px;
     }
 
-    /* Restore flex direction to keep symmetry */
     .modal-labels-left .param-label {
         flex-direction: row-reverse;
         justify-content: flex-start;
@@ -883,14 +780,12 @@ g[id^="parametro-"] {
         flex: none;
     }
 
-    /* Stack params vertically */
     .family-params {
         display: flex;
         flex-direction: column;
         gap: 5px;
     }
 
-    /* Align items towards the center spine */
     .modal-labels-left .family-params {
         align-items: flex-end;
     }
@@ -908,7 +803,6 @@ g[id^="parametro-"] {
     .family-header {
         margin-bottom: 5px;
         font-size: 0.65rem;
-        /* text-align will inherit from parent col (left/right) */
     }
 
     .param-label {
@@ -920,16 +814,8 @@ g[id^="parametro-"] {
 
     .param-name {
         font-size: 0.75rem;
-        /* text-align will be handled by flex order */
     }
 
-    /* Hide complex decorations */
-    .connector-lines,
-    .param-line {
-        display: none !important;
-    }
-
-    /* Show description in the bottom-left empty space */
     .param-description {
         display: block !important;
         position: static;
@@ -948,12 +834,17 @@ g[id^="parametro-"] {
         word-wrap: break-word;
         hyphens: auto;
         white-space: normal;
-        /* Force wrapping */
     }
 
     .ships-section {
         margin-top: 15px;
         align-items: flex-start;
-        /* Aligns to the left in right column */
+    }
+}
+
+@media (max-width: 600px) {
+    .lang-switch {
+        top: 15px;
+        right: 20px;
     }
 }

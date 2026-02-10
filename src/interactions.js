@@ -1,8 +1,13 @@
 /**
- * Interactions Module
- * Handles user interactions (hover, click) and SVG highlighting
+ * Módulo de Interacciones
+ * Maneja las interacciones del usuario (hover, click) y el resaltado de SVGs
  */
 
+/**
+ * Configura los eventos de mouse (hover) para las etiquetas de parámetros.
+ * @param {Object} config - Configuración global
+ * @param {string} lang - Idioma actual
+ */
 export function setupLabelInteractions(config, lang = 'es') {
     document.querySelectorAll('.param-label[data-active="true"]').forEach(label => {
         label.addEventListener('mouseenter', () => {
@@ -14,6 +19,11 @@ export function setupLabelInteractions(config, lang = 'es') {
     });
 }
 
+/**
+ * Configura los eventos de mouse para las etiquetas de barcos (mostrar descripción).
+ * @param {Object} config - Configuración global
+ * @param {string} lang - Idioma actual
+ */
 export function setupShipInteractions(config, lang = 'es') {
     const descContainer = document.getElementById('param-description');
     const { barcos } = config;
@@ -42,12 +52,15 @@ export function setupShipInteractions(config, lang = 'es') {
 }
 
 /**
- * Resalta con dos niveles en TODOS los SVGs del modal:
- * - Nivel 1 (familia): parámetros de la misma familia semi-resaltados
- * - Nivel 2 (específico): el parámetro seleccionado completamente resaltado
+ * Resalta los SVGs según el parámetro seleccionado y su familia.
+ * @param {string} paramId - ID del parámetro seleccionado
+ * @param {string} familia - ID de la familia del parámetro
+ * @param {boolean} highlight - true para resaltar, false para limpiar
+ * @param {Object} config - Configuración global
+ * @param {string} lang - Idioma actual
  */
 function highlightWithFamily(paramId, familia, highlight, config, lang = 'es') {
-    // Find all modal SVGs (single-disc or multi-disc)
+    // Buscar todos los SVGs del modal (modo disco único o multi-disco)
     const svgs = getModalSvgs();
     const { parametros } = config;
 
@@ -64,7 +77,7 @@ function highlightWithFamily(paramId, familia, highlight, config, lang = 'es') {
             svg.classList.add('highlighting-active');
             clearSvgHighlights(svg);
 
-            // Dimmed: atenuar todos los paths paramétricos
+            // Atenuado: atenuar todos los paths paramétricos
             const allPaths = svg.querySelectorAll('path[id^="param-"], path[id^="parametro-"], g[id^="param-"] path, g[id^="parametro-"] path');
             allPaths.forEach(el => el.classList.add('svg-dimmed'));
 
@@ -133,18 +146,23 @@ function highlightWithFamily(paramId, familia, highlight, config, lang = 'es') {
 }
 
 /**
- * Obtiene todos los SVGs del modal (modo single o multi-disc)
+ * Busca todos los elementos SVG de campaña en el modal (modo disco único o multi-disco).
+ * @returns {Array<SVGElement>} - Array de elementos SVG encontrados
  */
 function getModalSvgs() {
-    // Try single-disc first
+    // Intentar disco único primero
     const single = document.getElementById('modal-epea-svg');
     if (single) return [single];
 
-    // Multi-disc: find all modal-epea-svg-N
+    // Multi-disco: buscar todos los modal-epea-svg-N
     const multi = document.querySelectorAll('[id^="modal-epea-svg-"]');
     return [...multi];
 }
 
+/**
+ * Limpia todas las clases de resaltado de un SVG dado.
+ * @param {SVGElement} svg - Elemento SVG a limpiar
+ */
 function clearSvgHighlights(svg) {
     const all = svg.querySelectorAll('.svg-dimmed, .svg-family-highlight, .svg-highlighted');
     all.forEach(el => el.classList.remove('svg-dimmed', 'svg-family-highlight', 'svg-highlighted'));

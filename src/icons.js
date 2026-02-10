@@ -1,9 +1,9 @@
 /**
- * Application Constants and Assets
+ * Archivo centralizado para SVGs e íconos utilizados en la aplicación.
+ * Permite manejar el código SVG como funciones para personalización dinámica (ej: colores).
  */
 
-// SVG path data for the brush stroke used in legends
-export const BRUSH_PATH_DATA =
+const BRUSH_PATH_DATA =
     "m 530.76488,504.45662 c -0.34531,-0.19325 -0.12726,-0.56787 0.75842,-1.30296 0.4413,-0.36627 1.17118,-0.99943 1.62195,-1.407 " +
     "0.45075,-0.40756 0.98233,-0.86624 1.18128,-1.01926 0.43834,-0.33716 0.48158,-0.55164 0.0921,-0.45704 -0.14842,0.0361 -0.99733,0.33649 " +
     "-1.88646,0.66761 -1.51517,0.56429 -1.65512,0.59857 -2.23061,0.5464 -0.33769,-0.0307 -0.63652,-0.073 -0.66405,-0.094 -0.15203,-0.11639 " +
@@ -36,3 +36,18 @@ export const BRUSH_PATH_DATA =
     "-0.3501,0.0615 -0.66426,0.14602 -0.69816,0.18801 -0.0339,0.0419 -0.33416,0.1456 -0.66723,0.23027 -0.63877,0.1624 -0.86526,0.35946 " +
     "-0.81532,0.70945 0.0328,0.23032 0.17064,0.19223 -3.30195,0.91249 -0.69977,0.14513 -1.89937,0.39669 -2.66578,0.559 -2.59779,0.55016 " +
     "-2.79708,0.58364 -2.91905,0.4903 -0.13955,-0.10681 -2.20858,0.10228 -2.99232,0.3024 -0.64419,0.16447 -1.12647,0.16893 -1.4051,0.013 z";
+
+/**
+ * Genera el SVG del pincel con un color específico.
+ * @param {string} color - Color hexadecimal para el relleno
+ * @returns {string} String con el SVG completo
+ */
+export function getBrushIcon(color) {
+    return `
+        <svg class="param-color-svg brush-svg" viewBox="0 0 35 15" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(-525, -495)">
+                <path d="${BRUSH_PATH_DATA}" fill="${color}" />
+            </g>
+        </svg>
+    `;
+}

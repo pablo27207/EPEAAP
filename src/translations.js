@@ -11,8 +11,7 @@ export const translations = {
         },
         visitType: {
             directed: 'Visita dirigida',
-            opportunistic: 'Visita oportunista',
-            mixed: 'Dirigida + Oportunista'
+            opportunistic: 'Visita oportunista'
         }
     },
     en: {
@@ -27,8 +26,7 @@ export const translations = {
         },
         visitType: {
             directed: 'Directed visit',
-            opportunistic: 'Opportunistic visit',
-            mixed: 'Directed + Opportunistic'
+            opportunistic: 'Opportunistic visit'
         }
     }
 };
