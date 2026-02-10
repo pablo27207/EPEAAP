@@ -101,9 +101,9 @@ function updateUITexts() {
     const subtitleEl = document.getElementById('main-subtitle');
 
     if (currentLanguage === 'es') {
-        subtitleEl.innerHTML = `Un recorrido que brinda contexto sobre las visitas y la información recolectada durante ${years} años<br>a una de las series temporales ecológicas marinas más longevas del Atlántico Suboccidental.`;
+        subtitleEl.innerHTML = `Este recorrido brinda contexto sobre las visitas y la información recolectada durante ${years} años<br>a una de las series temporales ecológicas marinas más longevas del Atlántico Sudoccidental.`;
     } else {
-        subtitleEl.innerHTML = `A tour that provides context on the visits and information collected over ${years} years<br>to one of the longest-running marine ecological time series in the Subwestern Atlantic.`;
+        subtitleEl.innerHTML = `This tour provides context on the visits and information collected over ${years} years<br>to one of the longest-running marine ecological time series in the Southwest Atlantic.`;
     }
 }
 
@@ -264,7 +264,7 @@ function openModal(campaña) {
 function renderModalContent(campaña) {
     const titleEl = document.getElementById('modal-title');
     const subtitleEl = document.getElementById('modal-subtitle');
-    const svgContainer = document.getElementById('modal-svg');
+    const diagramContainer = document.getElementById('modal-diagram');
     const labelsLeft = document.getElementById('modal-labels-left');
     const labelsRight = document.getElementById('modal-labels-right');
 
@@ -276,22 +276,76 @@ function renderModalContent(campaña) {
 
     const monthName = fullMonths[currentLanguage][campaña.month];
     titleEl.textContent = `${monthName} ${campaña.year}`;
-    subtitleEl.textContent = ''; // Clear subtitle
+    subtitleEl.textContent = '';
 
-    // Re-render SVG
-    svgContainer.innerHTML = '';
-    const svg = renderCircle(svgTemplate, campaña, epeaData.config);
-    svg.setAttribute('id', 'modal-epea-svg');
-    svgContainer.appendChild(svg);
+    // Add or update "Propiedades estudiadas" label below the divider
+    const modalContent = document.querySelector('.modal-content');
+    let propsLabel = document.getElementById('modal-props-label');
+    if (!propsLabel) {
+        propsLabel = document.createElement('p');
+        propsLabel.id = 'modal-props-label';
+        propsLabel.className = 'modal-props-label';
+        const modalBody = document.querySelector('.modal-body');
+        modalContent.insertBefore(propsLabel, modalBody);
+    }
+    propsLabel.textContent = currentLanguage === 'en' ? 'STUDIED PROPERTIES' : 'PROPIEDADES ESTUDIADAS';
 
-    // Labels with Language
+    // Clear diagram area
+    diagramContainer.innerHTML = '';
+
+    const visitas = campaña.visitas || [];
+    const hasMultipleVisits = visitas.length > 1;
+
+    if (hasMultipleVisits) {
+        // Multi-disc mode: render individual discs per visit
+        diagramContainer.classList.add('multi-disc');
+
+
+        visitas.forEach((visita, index) => {
+            const discWrapper = document.createElement('div');
+            discWrapper.className = 'disc-wrapper';
+
+            // Create per-visit campaña for SVG rendering (single barco, visit-specific variables)
+            const visitCampaña = {
+                year: campaña.year,
+                month: campaña.month,
+                nro_visitas: 'unica',
+                tipo: visita.barco ? visita.barco.tipo : 'NA',
+                barcos: visita.barco ? [visita.barco] : [],
+                variables: visita.variables
+            };
+
+            const svgWrapper = document.createElement('div');
+            svgWrapper.className = 'modal-svg';
+            const svg = renderCircle(svgTemplate, visitCampaña, epeaData.config);
+            svg.setAttribute('id', `modal-epea-svg-${index}`);
+            svg.classList.add('modal-visit-svg');
+            svgWrapper.appendChild(svg);
+            discWrapper.appendChild(svgWrapper);
+
+            diagramContainer.appendChild(discWrapper);
+        });
+    } else {
+        // Single-disc mode: render as before
+        diagramContainer.classList.remove('multi-disc');
+
+        const svgWrapper = document.createElement('div');
+        svgWrapper.className = 'modal-svg';
+        svgWrapper.id = 'modal-svg';
+        const svg = renderCircle(svgTemplate, campaña, epeaData.config);
+        svg.setAttribute('id', 'modal-epea-svg');
+        svgWrapper.appendChild(svg);
+        diagramContainer.appendChild(svgWrapper);
+    }
+
+    // Labels with Language (always use combined campaign data, including ships in right panel)
     labelsLeft.innerHTML = buildGroupedLabels(LEFT_FAMILIES, campaña, 'left', epeaData.config, currentLanguage, translations[currentLanguage]);
     labelsRight.innerHTML = buildGroupedLabels(RIGHT_FAMILIES, campaña, 'right', epeaData.config, currentLanguage, translations[currentLanguage]);
 
     setTimeout(() => {
-        setupLabelInteractions(epeaData.config, currentLanguage); // Pass lang
-        setupShipInteractions(epeaData.config, currentLanguage); // Pass lang
-    }, 50); // Shorter delay since we might re-render
+        setupLabelInteractions(epeaData.config, currentLanguage);
+        setupShipInteractions(epeaData.config, currentLanguage);
+    }, 50);
 }
 
 function closeModal() {

@@ -43,9 +43,7 @@ export function buildGroupedLabels(familyGroups, campaña, side, config, lang = 
     if (side === 'right' && campaña.barcos && campaña.barcos.length > 0) {
         const shipsTitle = t.shipsTitle || 'BUQUES DE INVESTIGACIÓN';
 
-        // Determinar frecuencia de visita (única o múltiple)
-        const visitFrequency = t.visitFrequency || { single: 'Visita única', multiple: 'Visitas múltiples' };
-        const frequencyText = campaña.nro_visitas === 'multiple' ? visitFrequency.multiple : visitFrequency.single;
+
 
         // Labels para tipos de visita
         const visitTypeLabels = t.visitType || { directed: 'Dirigida', opportunistic: 'Oportunista', mixed: 'Dirigida + Oportunista' };
@@ -62,7 +60,6 @@ export function buildGroupedLabels(familyGroups, campaña, side, config, lang = 
         };
 
         html += `<div class="ships-section">`;
-        html += `<div class="visit-frequency">${frequencyText}</div>`;
         html += `<h4>${shipsTitle}</h4>`;
 
         campaña.barcos.forEach(barcoItem => {

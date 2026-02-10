@@ -37,8 +37,11 @@ function renderCircle(svgTemplate, campaña, config) {
     const barcos = campaña.barcos || [];
     [1, 2, 3].forEach(i => {
         if (i <= barcos.length) {
-            const barcoKey = barcos[i - 1];
-            const barcoConfig = config.barcos[barcoKey];
+            // Soportar ambos formatos: objeto {code, tipo} y string
+            const barcoItem = barcos[i - 1];
+            const barcoCode = typeof barcoItem === 'object' ? barcoItem.code : barcoItem;
+            const barcoTipo = typeof barcoItem === 'object' ? barcoItem.tipo : campaña.tipo;
+            const barcoConfig = config.barcos[barcoCode];
 
             svg.style.setProperty(`--ver-ojo-${i}`, 1);
 
@@ -48,17 +51,15 @@ function renderCircle(svgTemplate, campaña, config) {
                 ellipse.style.fill = barcoConfig.color;
                 ellipse.setAttribute('data-color', barcoConfig.color);
             }
+
+            // 3. Configurar pupila por barco según su tipo individual
+            // Propia/Dirigida = con pupila, Oportunista = sin pupila
+            const tipoLower = (barcoTipo || '').toLowerCase();
+            const conPupila = tipoLower.includes('propia') || tipoLower.includes('dirigida') ? 1 : 0;
+            svg.style.setProperty(`--ver-pupila-${i}`, conPupila);
         } else {
             svg.style.setProperty(`--ver-ojo-${i}`, 0);
-        }
-    });
-
-    // 3. Configurar pupilas según tipo de visita
-    // Propia = con pupila (dirigida), Oportunista = sin pupila
-    const conPupila = campaña.tipo === 'Propia' || campaña.tipo === 'Propia_Oportunista' ? 1 : 0;
-    barcos.forEach((_, i) => {
-        if (i < 3) {
-            svg.style.setProperty(`--ver-pupila-${i + 1}`, conPupila);
+            svg.style.setProperty(`--ver-pupila-${i}`, 0);
         }
     });
 

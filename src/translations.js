@@ -10,13 +10,9 @@ export const translations = {
             type: 'Tipo'
         },
         visitType: {
-            directed: 'Dirigida',
-            opportunistic: 'Oportunista',
+            directed: 'Visita dirigida',
+            opportunistic: 'Visita oportunista',
             mixed: 'Dirigida + Oportunista'
-        },
-        visitFrequency: {
-            single: 'Visita única',
-            multiple: 'Visitas múltiples'
         }
     },
     en: {
@@ -30,13 +26,9 @@ export const translations = {
             type: 'Type'
         },
         visitType: {
-            directed: 'Directed',
-            opportunistic: 'Opportunistic',
+            directed: 'Directed visit',
+            opportunistic: 'Opportunistic visit',
             mixed: 'Directed + Opportunistic'
-        },
-        visitFrequency: {
-            single: 'Single visit',
-            multiple: 'Multiple visits'
         }
     }
 };
