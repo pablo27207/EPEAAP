@@ -36,7 +36,7 @@ body {
    ============================== */
 header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 header h1 {
@@ -169,9 +169,10 @@ header h1 .coordinates {
 }
 
 .data-cell.no-data {
-    background: var(--bg-subtle);
+    background: transparent;
     border-radius: 50%;
-    opacity: 0.4;
+    opacity: 0.3;
+    cursor: default;
 }
 
 /* --- SVG Circle (grid) --- */

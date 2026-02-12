@@ -17,12 +17,11 @@ let currentCampaña = null; // Almacena la campaña actual para re-renderizar el
 const LEFT_FAMILIES = {
     'fisicas': ['param-temperatura', 'param-salinidad'],
     'biogeoquimicas': ['param-oxigeno', 'param-nutrientes', 'param-carbonatos'],
-    'produccion': ['parametro-pp']
+    'bioopticas': ['param-clorofila', 'param-absorcion-particulado', 'param-CDOM']
 };
 
 const RIGHT_FAMILIES = {
-    'bioopticas': ['param-clorofila', 'param-absorcion-particulado', 'param-CDOM'],
-    'biologicas': ['param-fitoplancton', 'param-zooplankton', 'param-ictioplankton', 'param-bacterioplankton']
+    'biologicas': ['param-fitoplancton', 'param-zooplankton', 'param-ictioplankton', 'param-bacterioplankton', 'parametro-pp']
 };
 
 /**
@@ -106,8 +105,12 @@ function updateUITexts() {
     // Encabezado
     const h1 = document.querySelector('header h1');
     // Preservar span si es posible, o reconstruir
-    h1.innerHTML = `${t.headerTitle} <span class="coordinates">(EPEA, 38°28′ S - 57°41′ O)</span>`;
 
+    if (currentLanguage === 'es') {
+        h1.innerHTML = `${t.headerTitle} <span class="coordinates">(EPEA, 38°28′ S - 57°41′ O)</span>`;
+    } else {
+        h1.innerHTML = `${t.headerTitle} <span class="coordinates">(EPEA, 38°28′ S - 57°41′ W)</span>`;
+    }
     // Subtítulo
     const { yearRange } = epeaData.metadata;
     const years = yearRange[1] - yearRange[0] + 1;
@@ -116,7 +119,7 @@ function updateUITexts() {
     if (currentLanguage === 'es') {
         subtitleEl.innerHTML = `Este recorrido brinda contexto sobre las visitas y la información recolectada durante ${years} años<br>a una de las series temporales ecológicas marinas más longevas del Atlántico Sudoccidental.`;
     } else {
-        subtitleEl.innerHTML = `This tour provides context on the visits and information collected over ${years} years<br>to one of the longest-running marine ecological time series in the Southwest Atlantic.`;
+        subtitleEl.innerHTML = `This visualization provides insight into the visits and information gathered over ${years} years<br>to one of the longest-running marine ecological time series in the Southwestern Atlantic.`;
     }
 }
 
@@ -206,7 +209,21 @@ function generateGrid() {
                 cell.addEventListener('mouseleave', () => animateCellHover(cell, false));
                 cell.addEventListener('click', () => openModal(campaña));
             } else {
+                // Renderizar solo el círculo exterior (sin líneas internas)
+                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                svg.setAttribute('viewBox', '0 0 64 64');
+                svg.classList.add('epea-circle');
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', '32');
+                circle.setAttribute('cy', '32');
+                circle.setAttribute('r', '30');
+                circle.setAttribute('fill', 'none');
+                circle.setAttribute('stroke', '#000000');
+                circle.setAttribute('stroke-width', '0.8');
+                svg.appendChild(circle);
+                cell.appendChild(svg);
                 cell.classList.add('no-data');
+                cell.title = currentLanguage === 'es' ? 'No visitado' : 'Not visited';
             }
 
             row.appendChild(cell);
